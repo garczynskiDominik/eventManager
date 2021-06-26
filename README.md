@@ -1,35 +1,46 @@
 # eventManager
-Application for managing cultural events. Technologies such as: Java, Spring, Maven, Hibernate, Sql, Bootstrap
+Application for managing cultural events. Technologies such as: Java, Spring, Maven, Hibernate, Sql, Jsp
 
 
 
 
 Serwis agregujący wydarzenia
+
+
 Krótki opis systemu
 Celem jest stworzenie serwisu, który umożliwi organizatorom wprowadzanie wydarzeń oraz
 zbieraniem na nie zapisów. Zapisać może się każdy zarejestrowany użytkownik.
 Serwis powinien być wyposażony także w wyszukiwarkę wydarzeń (z kilkoma kryteriami) oraz API,
 które umożliwi prezentację tychże na innych stronach/serwisach.
-Główne funkcje systemu
+
+Główne funkcje systemu:
+
 Rejestracja i logowanie użytkowników.
 Tworzenie i edycja wydarzeń przez organizatorów (użytkownik ze specjalną rolą).
 Komentowanie wydarzeń przez zalogowanych użytkowników.
 Zapisywanie się na wydarzenia.
 Wyszukiwarka wydarzeń.
 API dla innych stron/serwisów, chcących prezentować wydarzenia.
-Ogólne wytyczne
+
+Ogólne wytyczne:
 Budowa serwisu z wykorzystaniem Spring, JPA (Hibernate) oraz ThymeLeaf jako warstwy
 widoku.
-Wprowadzenie podziału w aplikacji na DAO, serwisy, kontrolery i umieszczanie odpowiedniej
+Wprowadzenie podziału w aplikacji na DAO = DTO, serwisy, kontrolery i umieszczanie odpowiedniej
 logiki w każdej z nich.
 Zabezpieczenie dostępu do aplikacji i funkcjonalności z wykorzystaniem Spring Security.
-Funkcjonalności
+
+
+Funkcjonalności:
+
 Strona główna
+
 - stworzenie pierwszego kontrolera oraz pliku widoku
 - stworzenie plików z definicjami stylów/skryptów (bootstrap + ewentualne własne), które będą
 załączane do każdej kolejnej strony (include)
 - na stronie w sekcji górnej powinna znaleźć się nazwa serwisu oraz przyciski zaloguj i zarejestruj
+
 Rejestracja użytkowników
+
 - formularz rejestracji zawierający:
 - login (email) – sprawdzenie pod kątem poprawności emaila,
 - hasło – musi mieć przynajmniej 8 znaków, ale nie więcej niż 30,
@@ -41,12 +52,16 @@ maksymalna długość to 50 znaków.
 dwa przypadki: organizator oraz zwykły użytkownik. Każda rejestrująca się osoba dostaje z
 automatu rolę „zwykły użytkownik”.
 - hasło jest trzymane w bazie danych w postaci uniemożliwiającej podejrzenie/odzyskanie.
+
 Logowanie użytkownika
+
 - formularz logowania zawierający login oraz hasło.
 - logowanie z wykorzystaniem Spring Security (do stworzenia odpowiednia konfiguracja).
 - po poprawnym zalogowaniu użytkownik powinien zostać przekierowany na stronę główną, gdzie
 zamiast przycisków zaloguj/zarejestruj wyświetli się informacja typu: „Zalogowany jako: email”.
+  
 Dodawanie nowego wydarzenia
+  
 - wydarzenie musi zawierać przynajmniej:
 - tytuł – pole nie może być puste, ani zawierać samych białych znaków,
 - datę od/do – obowiązkowe (opcjonalne sprawdzanie czy data jest datą przyszłą),
