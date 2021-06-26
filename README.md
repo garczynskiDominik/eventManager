@@ -1,10 +1,7 @@
 # eventManager
 Application for managing cultural events. Technologies such as: Java, Spring, Maven, Hibernate, Sql, Jsp
 
-
-
-
-Serwis agregujący wydarzenia
+###### Serwis agregujący wydarzenia
 
 
 Krótki opis systemu
@@ -13,7 +10,7 @@ zbieraniem na nie zapisów. Zapisać może się każdy zarejestrowany użytkowni
 Serwis powinien być wyposażony także w wyszukiwarkę wydarzeń (z kilkoma kryteriami) oraz API,
 które umożliwi prezentację tychże na innych stronach/serwisach.
 
-Główne funkcje systemu:
+###### Główne funkcje systemu:
 
 Rejestracja i logowanie użytkowników.
 Tworzenie i edycja wydarzeń przez organizatorów (użytkownik ze specjalną rolą).
@@ -22,7 +19,8 @@ Zapisywanie się na wydarzenia.
 Wyszukiwarka wydarzeń.
 API dla innych stron/serwisów, chcących prezentować wydarzenia.
 
-Ogólne wytyczne:
+###### Ogólne wytyczne:
+
 Budowa serwisu z wykorzystaniem Spring, JPA (Hibernate) oraz ThymeLeaf jako warstwy
 widoku.
 Wprowadzenie podziału w aplikacji na DAO = DTO, serwisy, kontrolery i umieszczanie odpowiedniej
@@ -32,14 +30,14 @@ Zabezpieczenie dostępu do aplikacji i funkcjonalności z wykorzystaniem Spring 
 
 Funkcjonalności:
 
-Strona główna
+###### Strona główna
 
 - stworzenie pierwszego kontrolera oraz pliku widoku
 - stworzenie plików z definicjami stylów/skryptów (bootstrap + ewentualne własne), które będą
 załączane do każdej kolejnej strony (include)
 - na stronie w sekcji górnej powinna znaleźć się nazwa serwisu oraz przyciski zaloguj i zarejestruj
 
-Rejestracja użytkowników
+###### Rejestracja użytkowników
 
 - formularz rejestracji zawierający:
 - login (email) – sprawdzenie pod kątem poprawności emaila,
@@ -53,28 +51,32 @@ dwa przypadki: organizator oraz zwykły użytkownik. Każda rejestrująca się o
 automatu rolę „zwykły użytkownik”.
 - hasło jest trzymane w bazie danych w postaci uniemożliwiającej podejrzenie/odzyskanie.
 
-Logowanie użytkownika
+###### Logowanie użytkownika
 
 - formularz logowania zawierający login oraz hasło.
 - logowanie z wykorzystaniem Spring Security (do stworzenia odpowiednia konfiguracja).
 - po poprawnym zalogowaniu użytkownik powinien zostać przekierowany na stronę główną, gdzie
 zamiast przycisków zaloguj/zarejestruj wyświetli się informacja typu: „Zalogowany jako: email”.
-  
-Dodawanie nowego wydarzenia
+
+###### Dodawanie nowego wydarzenia
   
 - wydarzenie musi zawierać przynajmniej:
 - tytuł – pole nie może być puste, ani zawierać samych białych znaków,
 - datę od/do – obowiązkowe (opcjonalne sprawdzanie czy data jest datą przyszłą),
 - opis – minimum 20 znaków.
 - wydarzenie musi być powiązane z użytkownikiem, który je dodaje.
-Lista wydarzeń
+
+###### Lista wydarzeń
+
 - na stronie głównej, w centralnej części należy umieścić listę wszystkich aktualnych wydarzeń
 - każdy element listy powinien zawierać:
 - wyróżniony nagłówek z tytułem wydarzenia,
 - datę od/do wydarzenia,
 - pierwsze 50 znaków opisu.
 - wydarzenia powinny być posortowane od najbliższego.
-Wyszukiwarka wydarzeń
+
+###### Wyszukiwarka wydarzeń
+
 - w górnej części strony głównej należy dodać formularz zawierający:
 - pole tekstowe na wpisanie frazy,
 - opcjonalnie: pole z wyborem (dropdown): przyszłe, trwające i przyszłe, wszystkie,
@@ -89,13 +91,17 @@ Widok szczegółowy wydarzenia
 - osobna strona, na której będą widoczne wszystkie cechy wydarzenia: tytuł, daty od/do, pełny opis.
 - na stronie głównej oraz na stronie z wynikami wyszukiwania należy podlinkować tytuł, aby po
 kliknięciu przenosił na stronę konkretnego wydarzenia.
-Dodawanie komentarzy do wydarzenia
+
+###### Dodawanie komentarzy do wydarzenia
+  
 - pod informacjami ogólnymi o wydarzeniu należy umieścić formularz dodawania komentarza.
 - długość komentarza może mieć maksymalnie 500 znaków.
 - komentarz może dodać tylko zalogowany użytkownik.
 - kod formularzem należy wyświetlić wszystkie dodane dotychczas komentarze w kolejności od
 najnowszego.
-Zapisywanie się na wydarzenie
+
+###### Zapisywanie się na wydarzenie
+  
 - na stronie wydarzenia należy dodać opcję (przycisk) zapisania się na nie, ale tylko dla
 zalogowanych użytkowników.
 - jeżeli aktualny użytkownik jest już zapisany, to zamiast przycisku widzi odpowiednią informację
@@ -112,19 +118,28 @@ listę w jakimś swoim widoku
 - opcjonalnie: dodanie w aplikacji możliwości filtrowania wydarzeń do wybranego zakresu dat, z
 wykorzystaniem filtrowania po stronie API 
 4 | 4
+  
+
+
+
 Zadania dodatkowe i rozszerzenia
-Możliwość dodawania obrazka do wydarzenia
+
+###### Możliwość dodawania obrazka do wydarzenia
 - dodanie możliwości dodawania pliku graficznego do formularz dodawania/edycji wydarzenia.
 - zapisywanie wgrywanego pliku na dysku lub w jakimś zewnętrznym serwisie typu cloud storage
 poprzez API lub zrobienie samemu takiego serwisu z własnym API (wersje dla zaawansowanych)
 - serwowanie pliku na potrzeby wyświetlenia w szczegółach wydarzenia (plus ewentualnie w innych
 miejscach).
-Edycja wydarzenia
+
+###### Edycja wydarzenia
+
 - dodatkowa strona, która umożliwi edycję stworzonego wydarzenia.
 - edytować wydarzenie może tylko jego właściciel lub administrator serwisu (nowa rola dla
 użytkownika).
 - opcja edycji powinna się pojawić przynajmniej na stronie szczegółów zamówienia.
-Moje wydarzenia
+
+##### Moje wydarzenia
+  
 - sekcja dla zalogowanego użytkownika, gdzie będzie widział wszystkie wydarzenia, zarówno te, w
 których brał udział, jak i te, których jest właścicielem.
 - te ostatnie powinny mieć możliwość przejścia na edycję (mechanizm we wcześniejszym zadaniu).
@@ -141,6 +156,8 @@ których brał udział, jak i te, których jest właścicielem.
 - data (opcjonalnie):
 - pole od
 - pole do
-Dodatkowe wymagania
+
+###### Dodatkowe wymagania
+
 - należy zadbać o estetyczny i funkcjonalny sposób prezentowania danych
 - dane pobierane od użytkowników powinny być wstępnie walidowane
