@@ -90,3 +90,4 @@
 
     </div>
 </section><!-- End Testimonials Section -->
+<%@include file="../dynamic/footer.jspf" %>

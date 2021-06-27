@@ -94,3 +94,4 @@
 
     </div>
 </section><!-- End Team Section -->
+<%@include file="../dynamic/footer.jspf" %>

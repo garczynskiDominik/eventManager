@@ -167,3 +167,4 @@
 
     </div>
 </section><!-- End Portfolio Section -->
+<%@include file="../dynamic/footer.jspf" %>

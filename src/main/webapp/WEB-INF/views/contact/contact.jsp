@@ -72,3 +72,4 @@
 
     </div>
 </section><!-- End Contact Section -->
+<%@include file="../dynamic/footer.jspf" %>
