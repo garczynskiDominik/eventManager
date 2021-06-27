@@ -46,10 +46,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/editAbout/**", "/editWork/**", "/editTechnologies/**")
-                .hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers("/", "/index", "/about", "/education", "/home", "/work","/technologies", "/contact")
-                .hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/**")
+                .permitAll()
+//                .antMatchers("/editAbout/**", "/editWork/**", "/editTechnologies/**")
+//                .hasAnyAuthority("ROLE_ADMIN")
+//                .antMatchers("/", "/index", "/about", "/education", "/home", "/work","/technologies", "/contact")
+//                .hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .and()
                 .csrf().disable()
                 .headers().frameOptions().disable()

@@ -4,16 +4,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
 public class UserEntityDetails implements UserDetails {
 
 
-    private final UserEntity userEntity;
+    private final User userEntity;
 
-    public UserEntityDetails(UserEntity userEntity) {
+    public UserEntityDetails(User userEntity) {
         this.userEntity = userEntity;
     }
 
@@ -33,8 +32,9 @@ public class UserEntityDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userEntity.getUsername();
+        return userEntity.getEmail();
     }
+
 
     @Override
     public boolean isAccountNonExpired() {
