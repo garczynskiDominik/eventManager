@@ -13,7 +13,7 @@
 
             <div class="carousel-inner" role="listbox">
 
-                <div class="carousel-item active" style="background-image: url(../webapp/resources/img/hero-carousel/1.jpg)">
+                <div class="carousel-item active" style="background-image: url(/resources/img/hero-carousel/1.jpg)">
                     <div class="carousel-container">
                         <div class="container">
                             <h2 class="animate__animated animate__fadeInDown">We are professional</h2>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url(../webapp/resources/img/hero-carousel/2.jpg)">
+                <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/2.jpg)">
                     <div class="carousel-container">
                         <div class="container">
                             <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url(../webapp/resources/img/hero-carousel/3.jpg)">
+                <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/3.jpg)">
                     <div class="carousel-container">
                         <div class="container">
                             <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url(../webapp/resources/img/hero-carousel/4.jpg)">
+                <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/4.jpg)">
                     <div class="carousel-container">
                         <div class="container">
                             <h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url(../webapp/resources/img/hero-carousel/5.jpg)">
+                <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/5.jpg)">
                     <div class="carousel-container">
                         <div class="container">
                             <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>
