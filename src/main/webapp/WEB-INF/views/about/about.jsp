@@ -62,4 +62,6 @@
         </div>
 
     </div>
-</section><!-- End About Us Section -->
+</section>
+<%@include file="../dynamic/footer.jspf" %>
+
