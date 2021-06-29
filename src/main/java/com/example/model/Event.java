@@ -21,7 +21,6 @@ public class Event{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NonNull
     private String nameOfEvent;
     private Date startDate;
     private Date endDate;

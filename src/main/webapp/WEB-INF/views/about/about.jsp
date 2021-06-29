@@ -23,7 +23,7 @@
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="about-col">
                     <div class="img">
-                        <img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
+                        <img src="resources/img/about-mission.jpg" alt="" class="img-fluid">
                         <div class="icon"><i class="bi bi-bar-chart"></i></div>
                     </div>
                     <h2 class="title"><a href="#">Our Mission</a></h2>
