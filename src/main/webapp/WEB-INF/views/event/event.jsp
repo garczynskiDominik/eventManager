@@ -12,6 +12,10 @@
             <h3 class="section-title">Events</h3>
         </header>
 
+        <div style="text-align: center">
+        <a href='<c:url value="/addEvent"/>'
+           class="btn-right btn btn-success" role="button">Add Event</a>
+        </div>
 
         <div class="row" data-aos-delay="100">
             <div class=" col-lg-12">
@@ -31,8 +35,8 @@
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
                         <figure>
-                            <img src="<c:url value="/resources/img/portfolio/app1.jpg"/>" class="img-fluid" alt="">
-                            <a href="<c:url value="/resources/img/portfolio/app1.jpg"/>" data-lightbox="portfolio"
+                            <img src="<c:url value="../resources/img/portfolio/app1.jpg"/>" class="img-fluid" alt="">
+                            <a href="<c:url value="../resources/img/portfolio/app1.jpg"/>" data-lightbox="portfolio"
                                data-title="${eventEach.nameOfEvent}"
                                class="link-preview"><i class="bi bi-plus"></i></a>
                             <a href="portfolio-details.html" class="link-details" title="More Details"><i
@@ -51,8 +55,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/web3.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/web3.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/web3.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/web3.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Web 3"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -68,8 +72,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/app2.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/app2.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/app2.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/app2.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="App 2"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -85,8 +89,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/card2.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/card2.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/card2.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/card2.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Card 2"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -102,8 +106,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/web2.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/web2.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/web2.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/web2.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Web 2"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -119,8 +123,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/app3.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/app3.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/app3.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/app3.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="App 3"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -136,8 +140,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/card1.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/card1.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/card1.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/card1.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Card 1"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -153,8 +157,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/card3.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/card3.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/card3.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/card3.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Card 3"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
@@ -170,8 +174,8 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
                     <figure>
-                        <img src="assets/img/portfolio/web1.jpg" class="img-fluid" alt="">
-                        <a href="assets/img/portfolio/web1.jpg" class="link-preview portfolio-lightbox"
+                        <img src="../resources/img/portfolio/web1.jpg" class="img-fluid" alt="">
+                        <a href="../resources/img/portfolio/web1.jpg" class="link-preview portfolio-lightbox"
                            data-gallery="portfolioGallery" title="Web 1"><i class="bi bi-plus"></i></a>
                         <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                 class="bi bi-link"></i></a>
