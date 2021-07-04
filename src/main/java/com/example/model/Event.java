@@ -1,6 +1,7 @@
 package com.example.model;
 
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Event{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     private String nameOfEvent;
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date startDate;

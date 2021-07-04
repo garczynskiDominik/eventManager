@@ -16,7 +16,7 @@
 
             <div style="margin-bottom: 20px">
                 <strong>Name of event</strong>
-                <input class="form-control" type="text" name="nameOfEvent">
+                <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+">
             </div>
 
             <div class="row" style="margin-bottom: 20px">
@@ -34,7 +34,7 @@
 
             <div style="margin-bottom: 20px">
                 <strong>Description</strong>
-                <textarea class="form-control" rows="2" name="description"></textarea>
+                <textarea class="form-control" rows="2" name="description" minlength="20"></textarea>
             </div>
 
             <div>
