@@ -45,7 +45,7 @@ public class EventController {
 
     //add
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
-    public RedirectView postaddEvent(@ModelAttribute Event event) {
+    public RedirectView postAddEvent(@ModelAttribute Event event) {
         eventRepository.save(event);
         return new RedirectView("/event");
     }

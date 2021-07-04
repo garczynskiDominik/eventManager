@@ -6,7 +6,7 @@
 
 
 <section id="portfolio" class="section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
 
         <header class="section-header">
             <h3 class="section-title">Events</h3>
