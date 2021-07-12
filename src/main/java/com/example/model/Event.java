@@ -30,5 +30,6 @@ public class Event{
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date endDate;
     private String description;
+    private String img;
 
 }

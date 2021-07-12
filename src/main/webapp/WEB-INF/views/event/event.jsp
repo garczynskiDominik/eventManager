@@ -35,8 +35,8 @@
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
                         <figure>
-                            <img src="<c:url value="../resources/img/portfolio/app1.jpg"/>" class="img-fluid" alt="">
-                            <a href="<c:url value="../resources/img/portfolio/app1.jpg"/>" data-lightbox="portfolio"
+                            <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
+                            <a href="<c:url value="${eventEach.img}"/>" data-lightbox="portfolio"
                                data-title="${eventEach.nameOfEvent}"
                                class="link-preview"><i class="bi bi-plus"></i></a>
                             <a href="portfolio-details.html" class="link-details" title="More Details"><i

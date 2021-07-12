@@ -31,6 +31,10 @@
                            min="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}"/>">
                 </div>
             </div>
+            <div style="margin-bottom: 20px">
+                <strong>Url img</strong>
+                <input class="form-control" type="text" name="img" required pattern="\S+">
+            </div>
 
             <div style="margin-bottom: 20px">
                 <strong>Description</strong>

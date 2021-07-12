@@ -24,7 +24,8 @@ public class EventServices {
                 event.getNameOfEvent(),
                 event.getStartDate(),
                 event.getEndDate(),
-                event.getDescription()
+                event.getDescription(),
+                event.getImg()
         );
 
         eventRepository.save(edit);
