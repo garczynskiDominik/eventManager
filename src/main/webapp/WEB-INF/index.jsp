@@ -12,8 +12,6 @@
 
     <%@include file="views/about/about.jsp" %>
 
-    <%@include file="views/services/services.jsp" %>
-
 
     <%@include file="views/event/event.jsp" %>
 
