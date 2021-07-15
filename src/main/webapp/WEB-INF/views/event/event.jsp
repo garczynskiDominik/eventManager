@@ -17,6 +17,7 @@
            class="btn-right btn btn-success" role="button">Add Event</a>
         </div>
 
+
         <div class="row" data-aos-delay="100">
             <div class=" col-lg-12">
                 <ul id="portfolio-flters">
@@ -39,8 +40,8 @@
                             <a href="<c:url value="${eventEach.img}"/>" data-lightbox="portfolio"
                                data-title="${eventEach.nameOfEvent}"
                                class="link-preview"><i class="bi bi-plus"></i></a>
-                            <a href="portfolio-details.html" class="link-details" title="More Details"><i
-                                    class="bi bi-link"></i></a>
+                            <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="More Details"><i
+                                    class="bi bi-arrow-clockwise"></i></a>
                         </figure>
 
                         <div class="portfolio-info">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+
 
             </c:forEach>
         </div>
