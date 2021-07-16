@@ -36,8 +36,8 @@ public class EventController {
     @RequestMapping(value = {"/event"}, method = RequestMethod.GET)
     public String getEvent(Model model) {
         List<Event> list = eventRepository.findAll();
-        List<EventDto> list1 = eventConverter.entityToDto(list);
-        model.addAttribute("event", list1);
+        List<EventDto> listDtos = eventConverter.entityToDto(list);
+        model.addAttribute("event", listDtos);
         return "event/event";
     }
 
@@ -49,7 +49,8 @@ public class EventController {
 
     //add
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
-    public RedirectView postAddEvent(@ModelAttribute Event event) {
+    public RedirectView postAddEvent(@ModelAttribute EventDto eventDto) {
+       Event event = eventConverter.dtoToEntity(eventDto);
         eventRepository.save(event);
         return new RedirectView("/event");
     }

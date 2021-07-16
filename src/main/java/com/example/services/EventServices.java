@@ -1,5 +1,7 @@
 package com.example.services;
 
+import com.example.DTO.EventDto;
+import com.example.converter.EventConverter;
 import com.example.model.Event;
 import com.example.repository.EventRepository;
 import org.springframework.stereotype.Service;
@@ -8,14 +10,16 @@ import org.springframework.stereotype.Service;
 public class EventServices {
 
     private final EventRepository eventRepository;
+    private final EventConverter eventConverter;
 
-    public EventServices(EventRepository eventRepository) {
+    public EventServices(EventRepository eventRepository, EventConverter eventConverter) {
         this.eventRepository = eventRepository;
+        this.eventConverter = eventConverter;
     }
 
-
-    public Event getEvent(Long id) {
-        return eventRepository.findById(id).orElse(null);
+    public EventDto getEvent(Long id) {
+        Event event = eventRepository.findById(id).orElse(null);
+        return eventConverter.entityToDto(event);
     }
 
     public void editEvent(Event event, Long id) {
