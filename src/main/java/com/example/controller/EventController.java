@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.DTO.EventDto;
+import com.example.converter.EventConverter;
 import com.example.model.Event;
 import com.example.model.User;
 import com.example.repository.EventRepository;
@@ -22,18 +24,20 @@ public class EventController {
 
     private final EventServices eventServices;
     private final EventRepository eventRepository;
+    private final EventConverter eventConverter;
 
-    public EventController(EventServices eventServices, EventRepository eventRepository) {
+    public EventController(EventServices eventServices, EventRepository eventRepository, EventConverter eventConverter) {
         this.eventServices = eventServices;
         this.eventRepository = eventRepository;
+        this.eventConverter = eventConverter;
     }
-
 
     //get all
     @RequestMapping(value = {"/event"}, method = RequestMethod.GET)
     public String getEvent(Model model) {
         List<Event> list = eventRepository.findAll();
-        model.addAttribute("event", list);
+        List<EventDto> list1 = eventConverter.entityToDto(list);
+        model.addAttribute("event", list1);
         return "event/event";
     }
 
