@@ -47,12 +47,12 @@
             </div>
 
             <div>
-                <input class="btn btn-success pull-left" type="submit" value="Add" style="width: 100%"></input>
+                <input class="btn btn-success pull-left" type="submit" value="Save" style="width: 100%"></input>
             </div>
 
         </form>
         <form name="send" method="POST" action='<c:url value="/deleteEvent/${event.id}"/>'>
-            <input type="submit" class="button button-b button-big button-rouded"
+            <input type="submit" class="btn btn-danger pull-left" style="width: 100%"
                    name="delete" value="Delete"/>
 
         </form>

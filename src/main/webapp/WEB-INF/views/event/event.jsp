@@ -18,7 +18,7 @@
         </div>
 
 
-        <div class="row" data-aos-delay="100">
+        <div class="row">
             <div class=" col-lg-12">
                 <ul id="portfolio-flters">
                     <li data-filter="*" class="filter-active">All</li>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row portfolio-container">
 
             <c:forEach items="${event}" var="eventEach">
 
@@ -40,6 +40,8 @@
 
                             <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="More Details"><i
                                     class="bi bi-arrow-clockwise"></i></a>
+                            <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="Edit"><i
+                                    class="bi bi-hammer"></i></a>
                         </figure>
                         <div class="btn-right btn btn-success" role="banner">
                         ${eventEach.type}
