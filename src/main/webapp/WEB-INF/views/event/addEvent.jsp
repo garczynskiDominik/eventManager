@@ -16,7 +16,7 @@
 
             <div style="margin-bottom: 20px">
                 <strong>Name of event</strong>
-                <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+">
+                <input class="form-control" type="text" name="nameOfEvent">
                 <strong>Type</strong>
                 <input class="form-control" type="text" name="type" required pattern="\S+">
 

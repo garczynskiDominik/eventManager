@@ -13,21 +13,19 @@
         </header>
 
         <div style="text-align: center">
-        <a href='<c:url value="/addEvent"/>'
-           class="btn-right btn btn-success" role="button">Add Event</a>
+            <a href='<c:url value="/addEvent"/>'
+               class="btn-right btn btn-success" role="button">Add Event</a>
         </div>
+    <br>
 
 
-        <div class="row">
-            <div class=" col-lg-12">
-                <ul id="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-web">Web</li>
-                </ul>
-            </div>
+        <div style="text-align: center">
+            <form action='<c:url value="/search/${value}"/>' method="get">
+                <input type="text" name="value"><input class="btn-right btn btn-success" type="submit" value="Search">
+            </form>
         </div>
+
+<br>
 
         <div class="row portfolio-container">
 
@@ -38,19 +36,16 @@
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
 
-                            <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="More Details"><i
-                                    class="bi bi-arrow-clockwise"></i></a>
                             <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="Edit"><i
                                     class="bi bi-hammer"></i></a>
                         </figure>
                         <div class="btn-right btn btn-success" role="banner">
-                        ${eventEach.type}
+                                ${eventEach.type}
                         </div>
 
 
                         <div class="portfolio-info">
                             <h4><a href='<c:url value="/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
-                            <h4><a href="portfolio-details.html">${eventEach.type}</a></h4>
                             <p>${eventEach.description}</p>
                         </div>
                     </div>
