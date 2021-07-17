@@ -87,7 +87,8 @@ głównej.
 3 | 4
 - na stronie z wynikami wyszukiwania powinien również występować formularz wyszukiwania jak na
 stronie głównej, a jego pola powinny być ustawione zgodnie z aktualnie wybranymi kryteriami.
-Widok szczegółowy wydarzenia
+  
+####### Widok szczegółowy wydarzenia
 - osobna strona, na której będą widoczne wszystkie cechy wydarzenia: tytuł, daty od/do, pełny opis.
 - na stronie głównej oraz na stronie z wynikami wyszukiwania należy podlinkować tytuł, aby po
 kliknięciu przenosił na stronę konkretnego wydarzenia.
