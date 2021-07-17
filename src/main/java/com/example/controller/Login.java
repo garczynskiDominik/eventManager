@@ -17,7 +17,7 @@ public class Login {
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
     public String postLogin() {
-        return "/home/home";
+        return "/login/login";
     }
 
     @RequestMapping(value = {"/register"}, method = RequestMethod.GET)

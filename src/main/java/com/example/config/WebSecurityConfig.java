@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
@@ -19,49 +20,18 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final UserEntityRepository userEntityRepository;
-
-    public WebSecurityConfig(UserEntityRepository userEntityRepository) {
-        this.userEntityRepository = userEntityRepository;
-    }
-
-
     @Bean
     protected PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-/*
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
-
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        AppUserDetailsServices appUserDetailsServices = new AppUserDetailsServices(userEntityRepository);
-        provider.setUserDetailsService(appUserDetailsServices);
-        return provider;
-    }*/
-
-//    @Autowired
-//    DataSource dataSource;
-//
-//    @Autowired
-//    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication().dataSource(dataSource)
-//                .usersByUsernameQuery("select nick,password,enable from users where nick=?")
-//                .authoritiesByUsernameQuery("select nick, roles from users where nick=?");
-//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
         auth.inMemoryAuthentication()
-                .withUser("user").password("user").roles("USER")
+                .withUser("user").password(new BCryptPasswordEncoder().encode("user")).roles("USER")
                 .and()
-                .withUser("admin").password("admin").roles("ADMIN");
+                .withUser("admin").password(new BCryptPasswordEncoder().encode("admin")).roles("ADMIN");
     }
 
     @Override
@@ -85,7 +55,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/home");
-
     }
 }
-
