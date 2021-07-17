@@ -21,7 +21,8 @@ public class User extends BaseEntity {
     private String email;
     private String password;
     private String nick;
-    private  String roles = "USER";
+    private boolean enable = true;
+    private  String roles = "ROLE_USER";
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> role = new HashSet<>();
 

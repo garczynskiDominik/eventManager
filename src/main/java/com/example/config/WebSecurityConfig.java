@@ -1,6 +1,7 @@
 package com.example.config;
 
 import com.example.repository.UserEntityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -11,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.sql.DataSource;
 
 
 @Configuration
@@ -28,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+/*
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
@@ -41,24 +44,40 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         AppUserDetailsServices appUserDetailsServices = new AppUserDetailsServices(userEntityRepository);
         provider.setUserDetailsService(appUserDetailsServices);
         return provider;
+    }*/
+
+//    @Autowired
+//    DataSource dataSource;
+//
+//    @Autowired
+//    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.jdbcAuthentication().dataSource(dataSource)
+//                .usersByUsernameQuery("select nick,password,enable from users where nick=?")
+//                .authoritiesByUsernameQuery("select nick, roles from users where nick=?");
+//    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("user").password("user").roles("USER")
+                .and()
+                .withUser("admin").password("admin").roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**")
+                .antMatchers("/event/addEvent")
+                .hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers("/", "/home", "/about", "/event", "/team", "/contact")
                 .permitAll()
-//                .antMatchers("/editAbout/**", "/editWork/**", "/editTechnologies/**")
-//                .hasAnyAuthority("ROLE_ADMIN")
-//                .antMatchers("/", "/index", "/about", "/education", "/home", "/work","/technologies", "/contact")
-//                .hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .and()
                 .csrf().disable()
                 .headers().frameOptions().disable()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .usernameParameter("username")
+                .usernameParameter("nick")
                 .passwordParameter("password")
                 .loginProcessingUrl("/login")
                 .failureForwardUrl("/login?error")

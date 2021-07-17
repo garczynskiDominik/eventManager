@@ -11,9 +11,15 @@ public class Login {
 
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-    public String postLogin() {
+    public String getLogin() {
         return "/login/login";
     }
+
+    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+    public String postLogin() {
+        return "/home/home";
+    }
+
     @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
     public String getregister() {
         return "/login/register";
