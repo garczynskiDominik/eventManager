@@ -18,6 +18,7 @@ public class EventConverter {
         dto.setImg(event.getImg());
         dto.setStartDate(event.getStartDate());
         dto.setEndDate(event.getEndDate());
+        dto.setType(event.getType());
 
 
         return dto;
@@ -37,7 +38,7 @@ public class EventConverter {
         event.setImg(eventDto.getImg());
         event.setStartDate(eventDto.getStartDate());
         event.setEndDate(eventDto.getEndDate());
-
+        event.setType(eventDto.getType());
         return event;
     }
 

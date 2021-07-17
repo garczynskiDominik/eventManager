@@ -50,7 +50,7 @@ public class EventController {
     //add
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
     public RedirectView postAddEvent(@ModelAttribute EventDto eventDto) {
-       Event event = eventConverter.dtoToEntity(eventDto);
+        Event event = eventConverter.dtoToEntity(eventDto);
         eventRepository.save(event);
         return new RedirectView("/event");
     }
@@ -66,15 +66,21 @@ public class EventController {
     //edit get
     @RequestMapping(value = {"/editEvent/{id}"}, method = RequestMethod.GET)
     public String getEditEvent(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("event",eventServices.getEvent(id));
+        model.addAttribute("event", eventServices.getEvent(id));
         return "event/editEvent";
     }
 
     //delete
     @Transactional
-    @RequestMapping(value = {"/deleteEvent/{id}"}, method = { RequestMethod.POST, RequestMethod.DELETE})
+    @RequestMapping(value = {"/deleteEvent/{id}"}, method = {RequestMethod.POST, RequestMethod.DELETE})
     public RedirectView deleteEvent(@PathVariable("id") Long id) {
         eventRepository.deleteById(id);
         return new RedirectView("/event");
+    }
+
+    @RequestMapping(value = {"/infoEvent/{id}"}, method = RequestMethod.GET)
+    public String getInfoEvent(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("event", eventServices.getEvent(id));
+        return "event/infoEvent";
     }
 }

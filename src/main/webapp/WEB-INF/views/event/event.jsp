@@ -33,19 +33,22 @@
 
             <c:forEach items="${event}" var="eventEach">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-${eventEach.type}">
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
-                            <a href="<c:url value="${eventEach.img}"/>" data-lightbox="portfolio"
-                               data-title="${eventEach.nameOfEvent}"
-                               class="link-preview"><i class="bi bi-plus"></i></a>
+
                             <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="More Details"><i
                                     class="bi bi-arrow-clockwise"></i></a>
                         </figure>
+                        <div class="btn-right btn btn-success" role="banner">
+                        ${eventEach.type}
+                        </div>
+
 
                         <div class="portfolio-info">
-                            <h4><a href="portfolio-details.html">${eventEach.nameOfEvent}</a></h4>
+                            <h4><a href='<c:url value="/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
+                            <h4><a href="portfolio-details.html">${eventEach.type}</a></h4>
                             <p>${eventEach.description}</p>
                         </div>
                     </div>

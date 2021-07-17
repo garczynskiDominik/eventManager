@@ -16,4 +16,5 @@ public class EventDto {
     private Date endDate;
     private String description;
     private String img;
+    private String type;
 }
