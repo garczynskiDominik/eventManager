@@ -13,14 +13,14 @@
         </header>
 
         <div style="text-align: center">
-            <a href='<c:url value="/addEvent"/>'
+            <a href='<c:url value="/event/addEvent"/>'
                class="btn-right btn btn-success" role="button">Add Event</a>
         </div>
     <br>
 
 
         <div style="text-align: center">
-            <form action='<c:url value="/search/${value}"/>' method="get">
+            <form action='<c:url value="/event/search/${value}"/>' method="get">
                 <input type="text" name="value"><input class="btn-right btn btn-success" type="submit" value="Search">
             </form>
         </div>
@@ -36,7 +36,7 @@
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
 
-                            <a href='<c:url value="/editEvent/${eventEach.id}"/>' class="link-details" title="Edit"><i
+                            <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details" title="Edit"><i
                                     class="bi bi-hammer"></i></a>
                         </figure>
                         <div class="btn-right btn btn-success" role="banner">
@@ -45,7 +45,7 @@
 
 
                         <div class="portfolio-info">
-                            <h4><a href='<c:url value="/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
+                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
                             <p>${eventEach.description}</p>
                         </div>
                     </div>
