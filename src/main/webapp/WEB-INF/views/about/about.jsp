@@ -5,56 +5,57 @@
 <%@include file="../dynamic/navBar.jspf" %>
 
 
-
-
-
-
 <!-- ======= About Us Section ======= -->
 <section id="about">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
 
         <header class="section-header">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>We are students of the Java programming course.
+            As part of the final project, we had to create an event aggregation website.
+            <br>The website is being developed all the time.</p>
         </header>
 
         <div class="row about-cols">
 
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
-                        <img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
+                        <img src="resources/img/about-mission.jpg" alt="" class="img-fluid">
                         <div class="icon"><i class="bi bi-bar-chart"></i></div>
                     </div>
                     <h2 class="title"><a href="#">Our Mission</a></h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Our website is designed to display current events to the user. Anyone can create an account on
+                        our website and then sign up for a selected event.
                     </p>
                 </div>
             </div>
 
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
-                        <img src="assets/img/about-plan.jpg" alt="" class="img-fluid">
+                        <img src="resources/img/about-plan.jpg" alt="" class="img-fluid">
                         <div class="icon"><i class="bi bi-brightness-high"></i></div>
                     </div>
                     <h2 class="title"><a href="#">Our Plan</a></h2>
                     <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        The plans were to create the website within 42 hours of the course for this section,
+                        and to refine it in the spare time.
                     </p>
                 </div>
             </div>
 
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
-                        <img src="assets/img/about-vision.jpg" alt="" class="img-fluid">
+                        <img src="resources/img/about-vision.jpg" alt="" class="img-fluid">
                         <div class="icon"><i class="bi bi-calendar4-week"></i></div>
                     </div>
                     <h2 class="title"><a href="#">Our Vision</a></h2>
                     <p>
-                        Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                        Our vision is to create a website that will be used by people all over the world.
+                        A website with a large database of events, with an easy-to-use interface, all in one place.
                     </p>
                 </div>
             </div>
@@ -62,6 +63,8 @@
         </div>
 
     </div>
+
 </section>
+
 <%@include file="../dynamic/footer.jspf" %>
 

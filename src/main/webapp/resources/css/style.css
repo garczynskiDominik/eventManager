@@ -122,7 +122,9 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.5s;
     z-index: 997;
     background: rgba(0, 0, 0, 0.9);
-    height: 80px;
+
+    height: 52px;
+
 }
 
 #header.header-transparent {
@@ -1474,7 +1476,7 @@ section {
 
 #footer .footer-top {
     background: #111;
-    padding: 60px 0 30px 0;
+    padding: 30px 0 5px 0;
 }
 
 #footer .footer-top .footer-info {
