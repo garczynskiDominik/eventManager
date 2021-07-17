@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 20px">
-                <strong>Url img</strong>
+                <strong>Image URL</strong>
                 <input class="form-control" type="text" name="img" required pattern="\S+">
             </div>
 
