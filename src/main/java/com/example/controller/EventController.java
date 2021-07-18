@@ -94,9 +94,9 @@ public class EventController {
 
     //saveOnEvent
     @Transactional
-    @RequestMapping(value = {"/event/saveOnEvent/"}, method = {RequestMethod.POST})
-    public RedirectView saveOnEvent(@PathVariable("id") User user) {
-
+    @RequestMapping(value = {"/event/saveOnEvent/{id}"}, method = {RequestMethod.GET})
+    public RedirectView saveOnEvent(@PathVariable("id") Long id) {
+        eventServices.userSaveToEvent(id);
         return new RedirectView("/event");
     }
 
