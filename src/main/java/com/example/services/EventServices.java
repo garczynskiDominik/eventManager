@@ -28,19 +28,8 @@ public class EventServices {
         return eventConverter.entityToDto(event);
     }
 
-    public void editEvent(Event event, Long id) {
-        Event edit = new Event(
-                id,
-                event.getNameOfEvent(),
-                event.getStartDate(),
-                event.getEndDate(),
-                event.getDescription(),
-                event.getImg(),
-                event.getType(),
-                event.getUsers()
-        );
-
-        eventRepository.save(edit);
+    public void editEvent(Event event) {
+        eventRepository.save(event);
     }
 
     public void userSaveToEvent(Long id) {

@@ -20,8 +20,6 @@ public class EventConverter {
         dto.setEndDate(event.getEndDate());
         dto.setType(event.getType());
         dto.setUsers(event.getUsers());
-
-
         return dto;
     }
 

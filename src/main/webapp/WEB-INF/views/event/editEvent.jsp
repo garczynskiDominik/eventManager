@@ -13,11 +13,11 @@
         </header>
 
 
-
-            <form action='<c:url value="/event/editEvent/${id}"/>' method="post" name="send">
+        <form action='<c:url value="/event/editEvent/${event.id}"/>' method="post" name="send">
             <div style="margin-bottom: 20px">
                 <strong>Name of event</strong>
-                <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+" value="${event.nameOfEvent}">
+                <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+"
+                       value="${event.nameOfEvent}">
                 <strong>Type</strong>
                 <input class="form-control" type="text" name="type" required pattern="\S+" value="${event.type}">
 
@@ -26,9 +26,9 @@
             <div class="row" style="margin-bottom: 20px">
                 <div class="col">
                     <strong>Start date</strong>
-                    <input  id=start class="form-control" type="date" name="startDate"
+                    <input id=start class="form-control" type="date" name="startDate"
                            min="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}"/>"
-                    value="${event.startDate}">
+                           value="${event.startDate}">
                 </div>
                 <div class="col">
                     <strong>End date</strong>
@@ -43,7 +43,8 @@
 
             <div style="margin-bottom: 20px">
                 <strong>Description</strong>
-                <textarea class="form-control" rows="2" name="description" minlength="20" maxlength="255">${event.description}</textarea>
+                <textarea class="form-control" rows="2" name="description" minlength="20"
+                          maxlength="255">${event.description}</textarea>
             </div>
 
             <div>
@@ -64,11 +65,11 @@
     var start = document.getElementById('start');
     var end = document.getElementById('end');
 
-    start.addEventListener('change', function() {
+    start.addEventListener('change', function () {
         if (start.value)
             end.min = start.value;
     }, false);
-    end.addEventListener('change', function() {
+    end.addEventListener('change', function () {
         if (end.value)
             start.max = end.value;
     }, false);

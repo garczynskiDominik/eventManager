@@ -58,7 +58,8 @@ public class EventController {
     //edit post
     @RequestMapping(value = {"/event/editEvent/{id}"}, method = RequestMethod.POST)
     public RedirectView saveEditEvent(@ModelAttribute Event event, @PathVariable("id") Long id) {
-        eventServices.editEvent(event, id);
+        event.setId(id);
+        eventServices.editEvent(event);
         return new RedirectView("/event");
 
     }
