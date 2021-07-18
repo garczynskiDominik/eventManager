@@ -9,12 +9,12 @@
     <div class="container">
 
         <header class="section-header">
-            <h3 class="section-title">Edir event ${event.nameOfEvent}</h3>
+            <h3 class="section-title">Edit event <br> ${event.nameOfEvent}</h3>
         </header>
 
 
 
-            <form action='<c:url value="/editEvent/${id}"/>' method="post" name="send">
+            <form action='<c:url value="/event/editEvent/${id}"/>' method="post" name="send">
             <div style="margin-bottom: 20px">
                 <strong>Name of event</strong>
                 <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+" value="${event.nameOfEvent}">
@@ -37,13 +37,13 @@
                 </div>
             </div>
             <div style="margin-bottom: 20px">
-                <strong>Url img</strong>
+                <strong>Image URL</strong>
                 <input class="form-control" type="text" name="img" required pattern="\S+" value="${event.img}">
             </div>
 
             <div style="margin-bottom: 20px">
                 <strong>Description</strong>
-                <textarea class="form-control" rows="2" name="description" minlength="20"></textarea>
+                <textarea class="form-control" rows="2" name="description" minlength="20" maxlength="255">${event.description}</textarea>
             </div>
 
             <div>
@@ -51,7 +51,7 @@
             </div>
 
         </form>
-        <form name="send" method="POST" action='<c:url value="/deleteEvent/${event.id}"/>'>
+        <form name="send" method="POST" action='<c:url value="/event/deleteEvent/${event.id}"/>'>
             <input type="submit" class="btn btn-danger pull-left" style="width: 100%"
                    name="delete" value="Delete"/>
 

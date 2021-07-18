@@ -41,11 +41,11 @@
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
-
+                            <sec:authorize access="hasRole('ADMIN')">
                             <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details"
                                title="Edit"><i
                                     class="bi bi-hammer"></i></a>
-
+                            </sec:authorize>
                         </figure>
 
                         <div class="btn-right btn btn-success" role="banner">
@@ -60,9 +60,9 @@
 
 
                         <div class="portfolio-info">
-                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a>
-                            </h4>
-                            <p>${eventEach.description}</p>
+                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
+                            <h4><fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.startDate}"/> - <fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.endDate}"/></h4>
+
                         </div>
                     </div>
                 </div>
