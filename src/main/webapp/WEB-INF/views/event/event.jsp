@@ -52,7 +52,7 @@
                                 ${eventEach.type}
                         </div>
 
-                        <a href='<c:url value="/event/addOnEvent/${eventEach.id}"/>' class="link-details"
+                        <a href='<c:url value="/event/saveOnEvent/${eventEach.id}"/>' class="link-details"
                            title="Edit"><i
                                 class="bi bi-plus-circle"></i></a>
 
