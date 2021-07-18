@@ -39,8 +39,24 @@
             <strong>Description</strong>
             ${event.description}
         </div>
+    </div>
 
 
+    <div class="col-lg-3 col-md-6">
+        <table class=" table table-light">
+            <thead>
+            <tr>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${event.users}" var="eventEach">
+                <tr>
+                    <td>${eventEach.email}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
 
 </section>
