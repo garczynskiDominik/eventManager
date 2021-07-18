@@ -65,7 +65,7 @@
                         <div class="portfolio-info">
                             <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
                             <h4><fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.startDate}"/> - <fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.endDate}"/></h4>
-
+                            <p>${eventEach.description}</p>
                         </div>
                     </div>
                 </div>
@@ -76,5 +76,6 @@
 
     </div>
 </section>
+
 <!-- End Portfolio Section -->
 <%@include file="../dynamic/footer.jspf" %>
