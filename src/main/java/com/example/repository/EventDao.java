@@ -26,8 +26,6 @@ public class EventDao {
 
 
         Root<Event> event = cq.from(Event.class);
-//        Predicate namePredicate = cb.equal(event.get("nameOfEvent"), nameOfEvent);
-
 
         Predicate namePredicate = cb.like(event.get("nameOfEvent"), "%" + value+ "%");
         Predicate typePredicate = cb.like(event.get("type"), "%" + value + "%");

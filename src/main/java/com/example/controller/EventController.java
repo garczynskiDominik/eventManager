@@ -79,12 +79,14 @@ public class EventController {
         return new RedirectView("/event");
     }
 
+    // info about event
     @RequestMapping(value = {"/event/infoEvent/{id}"}, method = RequestMethod.GET)
     public String getInfoEvent(Model model, @PathVariable("id") Long id) {
         model.addAttribute("event", eventServices.getEvent(id));
         return "event/infoEvent";
     }
 
+    //search
     @RequestMapping(value = {"/event/search"}, method = RequestMethod.GET)
     public String getEvent(Model model, @RequestParam("value") String value) {
         List<Event> list = eventDao.findEventsByNameAndType(value);
@@ -100,6 +102,7 @@ public class EventController {
         return new RedirectView("/event");
     }
 
+    //delete from Event
     @RequestMapping(value = {"/event/deleteFromEvent/{id}"}, method = {RequestMethod.GET})
     public RedirectView deleteFromEvent(@PathVariable("id") Long id) {
         eventServices.userDeleteFromEvent(id);
