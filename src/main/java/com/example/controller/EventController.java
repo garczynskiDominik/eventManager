@@ -93,12 +93,16 @@ public class EventController {
     }
 
     //saveOnEvent
-    @Transactional
     @RequestMapping(value = {"/event/saveOnEvent/{id}"}, method = {RequestMethod.GET})
     public RedirectView saveOnEvent(@PathVariable("id") Long id) {
         eventServices.userSaveToEvent(id);
         return new RedirectView("/event");
     }
 
+    @RequestMapping(value = {"/event/deleteFromEvent/{id}"}, method = {RequestMethod.GET})
+    public RedirectView deleteFromEvent(@PathVariable("id") Long id) {
+        eventServices.userDeleteFromEvent(id);
+        return new RedirectView("/event");
+    }
 
 }

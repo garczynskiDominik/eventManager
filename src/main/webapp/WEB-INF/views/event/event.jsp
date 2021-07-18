@@ -55,6 +55,9 @@
                         <a href='<c:url value="/event/saveOnEvent/${eventEach.id}"/>' class="link-details"
                            title="Edit"><i
                                 class="bi bi-plus-circle"></i></a>
+                        <a href='<c:url value="/event/deleteFromEvent/${eventEach.id}"/>' class="link-details"
+                           title="Edit"><i
+                                class="bi bi-calendar-minus"></i></a>
 
 
 
