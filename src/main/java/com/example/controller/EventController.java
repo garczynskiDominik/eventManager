@@ -92,7 +92,7 @@ public class EventController {
         return "event/event";
     }
 
-    //saveonEvent
+    //saveOnEvent
     @Transactional
     @RequestMapping(value = {"/event/saveOnEvent/"}, method = {RequestMethod.POST})
     public RedirectView saveOnEvent(@PathVariable("id") User user) {

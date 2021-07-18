@@ -4,6 +4,7 @@ import com.example.DTO.EventDto;
 import com.example.converter.EventConverter;
 import com.example.model.Event;
 import com.example.repository.EventRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,4 +37,7 @@ public class EventServices {
 
         eventRepository.save(edit);
     }
+
+
+
 }

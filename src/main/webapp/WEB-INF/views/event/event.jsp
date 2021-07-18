@@ -1,8 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-
 
 
 <%@include file="../dynamic/css.jspf" %>
@@ -18,8 +17,8 @@
 
         <div style="text-align: center">
             <sec:authorize access="hasRole('ADMIN')">
-                    <a href='<c:url value="/event/addEvent"/>'
-                       class="btn-right btn btn-success" role="button">Add Event</a>
+                <a href='<c:url value="/event/addEvent"/>'
+                   class="btn-right btn btn-success" role="button">Add Event</a>
             </sec:authorize>
         </div>
         <br>
@@ -48,9 +47,16 @@
                                     class="bi bi-hammer"></i></a>
 
                         </figure>
+
                         <div class="btn-right btn btn-success" role="banner">
                                 ${eventEach.type}
                         </div>
+
+                        <a href='<c:url value="/event/addOnEvent/${eventEach.id}"/>' class="link-details"
+                           title="Edit"><i
+                                class="bi bi-plus-circle"></i></a>
+
+
 
 
                         <div class="portfolio-info">
