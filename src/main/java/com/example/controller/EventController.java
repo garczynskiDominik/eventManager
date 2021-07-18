@@ -84,7 +84,7 @@ public class EventController {
         return "event/infoEvent";
     }
 
-    @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/event/search"}, method = RequestMethod.GET)
     public String getEvent(Model model, @RequestParam("value") String value) {
         List<Event> list = eventDao.findEventsByNameAndType(value);
         List<EventDto> listDtos = eventConverter.entityToDto(list);

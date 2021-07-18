@@ -27,7 +27,8 @@
 
         <div style="text-align: center">
             <form action='<c:url value="/event/search/${value}"/>' method="get">
-                <input type="text" name="value"><input class="btn-right btn btn-success" type="submit" value="Search">
+                <input type="text" name="value" style="height: 37px; vertical-align: middle; border-color: #18d26e; border-radius: 0.25rem">
+                <input class="btn-right btn btn-success" type="submit" value="Search">
             </form>
         </div>
 
