@@ -91,4 +91,14 @@ public class EventController {
         model.addAttribute("event", listDtos);
         return "event/event";
     }
+
+    //saveonEvent
+    @Transactional
+    @RequestMapping(value = {"/event/saveOnEvent/"}, method = {RequestMethod.POST})
+    public RedirectView saveOnEvent(@PathVariable("id") User user) {
+
+        return new RedirectView("/event");
+    }
+
+
 }

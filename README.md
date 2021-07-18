@@ -108,8 +108,9 @@ zalogowanych użytkowników.
 - jeżeli aktualny użytkownik jest już zapisany, to zamiast przycisku widzi odpowiednią informację
 oraz opcjonalnie przycisk do wypisania się z danego wydarzenia.
 - obok informacji ogólnych o wydarzeniu należy umieścić listę wszystkich aktualnie zapisanych na
-niego użytkowników.
-API dla innych serwisów – listowanie wydarzeń
+niego użytkowników
+  .
+###### API dla innych serwisów – listowanie wydarzeń
 - API powinno spełniać zalecenia REST’owe.
 - metoda powinna zwracać listę wszystkich przyszłych wydarzeń.
 - opcjonalnie może dodatkowo umożliwiać filtrowanie zwracanych wydarzeń do zakresu dat.
