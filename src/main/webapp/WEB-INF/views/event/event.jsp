@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 
@@ -17,10 +17,14 @@
         </header>
 
         <div style="text-align: center">
-            <a href='<c:url value="/event/addEvent"/>'
-               class="btn-right btn btn-success" role="button">Add Event</a>
+            <sec:authorize access="hasRole('ADMIN')">
+                <c:forEach items="${about}" var="title">
+                    <a href='<c:url value="/event/addEvent"/>'
+                       class="btn-right btn btn-success" role="button">Add Event</a>
+                </c:forEach>
+            </sec:authorize>
         </div>
-    <br>
+        <br>
 
 
         <div style="text-align: center">
@@ -29,7 +33,7 @@
             </form>
         </div>
 
-<br>
+        <br>
 
         <div class="row portfolio-container">
 
@@ -40,7 +44,8 @@
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
 
-                            <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details" title="Edit"><i
+                            <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details"
+                               title="Edit"><i
                                     class="bi bi-hammer"></i></a>
                         </figure>
                         <div class="btn-right btn btn-success" role="banner">
@@ -49,7 +54,8 @@
 
 
                         <div class="portfolio-info">
-                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
+                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a>
+                            </h4>
                             <p>${eventEach.description}</p>
                         </div>
                     </div>
