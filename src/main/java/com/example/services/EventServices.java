@@ -30,7 +30,8 @@ public class EventServices {
                 event.getEndDate(),
                 event.getDescription(),
                 event.getImg(),
-                event.getType()
+                event.getType(),
+                event.getUsers()
         );
 
         eventRepository.save(edit);

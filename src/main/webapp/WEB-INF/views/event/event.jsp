@@ -45,6 +45,14 @@
                             <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details"
                                title="Edit"><i
                                     class="bi bi-hammer"></i></a>
+
+
+
+                            <a href='<c:url value="/event/saveOnEvent/${eventEach.id}"/>' class="link-details"
+                               title="Edit"><i
+                                    class="bi bi-plus-circle"></i></a>
+
+
                         </figure>
                         <div class="btn-right btn btn-success" role="banner">
                                 ${eventEach.type}
