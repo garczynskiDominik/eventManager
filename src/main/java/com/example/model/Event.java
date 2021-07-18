@@ -23,9 +23,9 @@ public class Event {
     private Long id;
     @NotNull
     private String nameOfEvent;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
     private String description;
     private String img;
