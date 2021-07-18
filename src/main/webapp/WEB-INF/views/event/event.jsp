@@ -18,10 +18,8 @@
 
         <div style="text-align: center">
             <sec:authorize access="hasRole('ADMIN')">
-                <c:forEach items="${about}" var="title">
                     <a href='<c:url value="/event/addEvent"/>'
                        class="btn-right btn btn-success" role="button">Add Event</a>
-                </c:forEach>
             </sec:authorize>
         </div>
         <br>
