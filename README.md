@@ -87,7 +87,8 @@ głównej.
 3 | 4
 - na stronie z wynikami wyszukiwania powinien również występować formularz wyszukiwania jak na
 stronie głównej, a jego pola powinny być ustawione zgodnie z aktualnie wybranymi kryteriami.
-Widok szczegółowy wydarzenia
+  
+####### Widok szczegółowy wydarzenia
 - osobna strona, na której będą widoczne wszystkie cechy wydarzenia: tytuł, daty od/do, pełny opis.
 - na stronie głównej oraz na stronie z wynikami wyszukiwania należy podlinkować tytuł, aby po
 kliknięciu przenosił na stronę konkretnego wydarzenia.
@@ -107,8 +108,9 @@ zalogowanych użytkowników.
 - jeżeli aktualny użytkownik jest już zapisany, to zamiast przycisku widzi odpowiednią informację
 oraz opcjonalnie przycisk do wypisania się z danego wydarzenia.
 - obok informacji ogólnych o wydarzeniu należy umieścić listę wszystkich aktualnie zapisanych na
-niego użytkowników.
-API dla innych serwisów – listowanie wydarzeń
+niego użytkowników
+  .
+###### API dla innych serwisów – listowanie wydarzeń
 - API powinno spełniać zalecenia REST’owe.
 - metoda powinna zwracać listę wszystkich przyszłych wydarzeń.
 - opcjonalnie może dodatkowo umożliwiać filtrowanie zwracanych wydarzeń do zakresu dat.

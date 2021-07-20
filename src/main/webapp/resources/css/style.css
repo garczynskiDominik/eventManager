@@ -964,8 +964,9 @@ section {
 
 #portfolio .portfolio-item {
     position: relative;
-    height: 360px;
+    height: 450px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 #portfolio .portfolio-item figure {
@@ -1036,7 +1037,7 @@ section {
     background: #fff;
     text-align: center;
     padding: 30px;
-    height: 90px;
+    height: 170px;
     border-radius: 0 0 3px 3px;
 }
 
@@ -1443,7 +1444,7 @@ section {
 }
 
 #contact .php-email-form button[type="submit"]:hover {
-    background: #13a456;
+    background: #157347;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1768,3 +1769,17 @@ a.socialIcon:hover,
     transition: all 0.8s;
     transition: all 0.8s
 }
+
+.title {
+    font-size: 14px;
+    font-weight:bold;
+}
+.komen {
+    font-size:14px;
+}
+.geser {
+    margin-left:55px;
+    margin-top:5px;
+}
+
+

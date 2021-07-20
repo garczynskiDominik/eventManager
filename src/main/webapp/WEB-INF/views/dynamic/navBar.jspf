@@ -1,3 +1,6 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container-fluid">
@@ -15,13 +18,13 @@
                         <li><a class="nav-link scrollto " href='<c:url value="/event"/>'>Events</a></li>
                         <li><a class="nav-link scrollto" href='<c:url value="/team"/>'>Team</a></li>
                         <li><a class="nav-link scrollto" href='<c:url value="/contact"/>'>Contact</a></li>
-                        <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href='<c:url value="/login"/>'>Login</a></li>
-                                <li><a href='<c:url value="/logout"/>'>Logout</a></li>
+                        <li> <sec:authorize access="isAuthenticated()">
+                                 <a href='<c:url value="/logout"/>'>Logout</a>
+                             </sec:authorize>
+                             <sec:authorize access="!isAuthenticated()">
+                                 <a href='<c:url value="/login"/>'>Login</a>
+                             </sec:authorize></li>
 
-                            </ul>
-                        </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->

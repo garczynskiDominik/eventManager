@@ -15,10 +15,10 @@ public class AppUserDetailsServices implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return  userEntityRepository
-                .findByEmailIgnoreCase(email)
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userEntityRepository
+                .findByEmailIgnoreCase(username)
                 .map(UserEntityDetails::new)
-                .orElseThrow(()-> new UsernameNotFoundException(email));
+                .orElseThrow(() -> new UsernameNotFoundException(username));
     }
 }

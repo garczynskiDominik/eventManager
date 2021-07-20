@@ -20,15 +20,19 @@ public class EventDao {
         this.em = em;
     }
 
-    List<Event> findEventsByNameAndType(String nameOfEvent, String type) {
+    public List<Event> findEventsByNameAndType(String value) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Event> cq = cb.createQuery(Event.class);
 
 
         Root<Event> event = cq.from(Event.class);
-        Predicate namePredicate = cb.equal(event.get("name"), nameOfEvent);
-        Predicate typePredicate = cb.like(event.get("type"), "%" + type + "%");
-        cq.where(namePredicate, typePredicate);
+
+        Predicate namePredicate = cb.like(event.get("nameOfEvent"), "%" + value+ "%");
+        Predicate typePredicate = cb.like(event.get("type"), "%" + value + "%");
+        Predicate descriptionPredicate = cb.like(event.get("description"), "%" + value + "%");
+
+        Predicate or = cb.or(namePredicate, typePredicate, descriptionPredicate);
+        cq.where(or);
 
         TypedQuery<Event> query = em.createQuery(cq);
         return query.getResultList();

@@ -1,10 +1,9 @@
 package com.example.config;
 
-import com.example.repository.UserEntityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,53 +11,37 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.sql.DataSource;
+
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserEntityRepository userEntityRepository;
+    @Autowired
+    DataSource dataSource;
 
-    public WebSecurityConfig(UserEntityRepository userEntityRepository) {
-        this.userEntityRepository = userEntityRepository;
-    }
-
-
-    @Bean
-    protected PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
-
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        AppUserDetailsServices appUserDetailsServices = new AppUserDetailsServices(userEntityRepository);
-        provider.setUserDetailsService(appUserDetailsServices);
-        return provider;
+    @Autowired
+    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+        auth.jdbcAuthentication().dataSource(dataSource)
+                .usersByUsernameQuery("select nick,CONCAT('{noop}',password),enable from users where nick=?")
+                .authoritiesByUsernameQuery("select nick, roles from users where nick=?");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**")
+                .antMatchers("/event/addEvent")
+                .hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers("/", "/home", "/about", "/event", "/team", "/contact")
                 .permitAll()
-//                .antMatchers("/editAbout/**", "/editWork/**", "/editTechnologies/**")
-//                .hasAnyAuthority("ROLE_ADMIN")
-//                .antMatchers("/", "/index", "/about", "/education", "/home", "/work","/technologies", "/contact")
-//                .hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .and()
                 .csrf().disable()
                 .headers().frameOptions().disable()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .usernameParameter("username")
+                .usernameParameter("nick")
                 .passwordParameter("password")
                 .loginProcessingUrl("/login")
                 .failureForwardUrl("/login?error")
@@ -66,7 +49,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/home");
-
     }
 }
-
