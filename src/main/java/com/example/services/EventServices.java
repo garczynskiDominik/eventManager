@@ -35,14 +35,7 @@ public class EventServices {
     public void userSaveToEvent(Long id) {
 
         Event event = eventRepository.findById(id).orElse(null);
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String nick;
-        if (principal instanceof UserDetails) {
-            nick = ((UserDetails) principal).getUsername();
-        } else {
-            nick = principal.toString();
-        }
-        User userToEvent = userEntityRepository.findByNick(nick);
+        User userToEvent = getUser();
         userToEvent.addEvent(event);
         eventRepository.save(event);
     }
@@ -50,6 +43,13 @@ public class EventServices {
     public void userDeleteFromEvent(Long id) {
 
         Event event = eventRepository.findById(id).orElse(null);
+        User userToEvent = getUser();
+        userToEvent.removeEvent(event);
+        eventRepository.save(event);
+
+    }
+
+    private User getUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String nick;
         if (principal instanceof UserDetails) {
@@ -57,10 +57,7 @@ public class EventServices {
         } else {
             nick = principal.toString();
         }
-        User userToEvent = userEntityRepository.findByNick(nick);
-        userToEvent.removeEvent(event);
-        eventRepository.save(event);
-
+        return userEntityRepository.findByNick(nick);
     }
 
 

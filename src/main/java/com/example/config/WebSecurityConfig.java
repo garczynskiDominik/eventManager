@@ -17,19 +17,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-   /* @Bean
-    protected PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }*/
-
-   /* @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.inMemoryAuthentication()
-                .withUser("user").password(new BCryptPasswordEncoder().encode("user")).roles("USER")
-                .and()
-                .withUser("admin").password(new BCryptPasswordEncoder().encode("admin")).roles("ADMIN");
-    }*/
 
     @Autowired
     DataSource dataSource;
