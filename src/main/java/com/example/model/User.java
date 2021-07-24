@@ -20,6 +20,7 @@ public class User extends BaseEntity {
     private String nick;
     private boolean enable = true;
     private String roles = "ROLE_USER";
+    private String author;
     @ManyToMany(
             cascade = {CascadeType.MERGE, CascadeType.PERSIST}
     )

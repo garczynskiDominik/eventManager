@@ -23,6 +23,8 @@ public class EventServices {
         this.userEntityRepository = userEntityRepository;
     }
 
+
+
     public EventDto getEvent(Long id) {
         Event event = eventRepository.findById(id).orElse(null);
         return eventConverter.entityToDto(event);
@@ -49,7 +51,7 @@ public class EventServices {
 
     }
 
-    private User getUser() {
+    public User getUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String nick;
         if (principal instanceof UserDetails) {
