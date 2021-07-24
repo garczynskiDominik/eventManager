@@ -10,15 +10,14 @@
 
         <header class="section-header">
             <h3 class="section-title">${event.nameOfEvent}</h3>
-<%--            <div class="btn-right btn btn-success" role="banner">--%>
-<%--                ${event.author.nick}dupa--%>
-<%--            </div>--%>
         </header>
 
         <div class="row" style="margin-bottom: 20px">
             <div class="col">
                 <strong style="color: #18d26e">Name of event: </strong>
                 ${event.nameOfEvent}<br>
+                <strong style="color: #18d26e">Author: </strong>
+                ${event.author.nick}<br>
                 <strong style="color: #18d26e">Type: </strong>
                 ${event.type}<br>
                 <strong style="color: #18d26e">Start date: </strong>

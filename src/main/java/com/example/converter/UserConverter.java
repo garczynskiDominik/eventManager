@@ -12,6 +12,7 @@ public class UserConverter {
 
     public UserDto entityToDto(User user) {
         UserDto dto = new UserDto();
+        dto.setId(user.getId());
         dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
         dto.setNick(user.getNick());
@@ -28,6 +29,7 @@ public class UserConverter {
 
     public User dtoToEntity(UserDto userDto) {
         User user = new User();
+        user.setId(userDto.getId());
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
         user.setNick(userDto.getNick());
