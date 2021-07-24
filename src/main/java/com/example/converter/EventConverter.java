@@ -10,6 +10,13 @@ import java.util.stream.Collectors;
 @Component
 public class EventConverter {
 
+    private final UserConverter userConverter;
+
+
+    public EventConverter(UserConverter userConverter) {
+        this.userConverter = userConverter;
+    }
+
     public EventDto entityToDto(Event event) {
         EventDto dto = new EventDto();
         dto.setId(event.getId());
@@ -20,6 +27,7 @@ public class EventConverter {
         dto.setEndDate(event.getEndDate());
         dto.setType(event.getType());
         dto.setUsers(event.getUsers());
+        dto.setAuthor(userConverter.entityToDto(event.getAuthor()));
         return dto;
     }
 
@@ -39,6 +47,10 @@ public class EventConverter {
         event.setEndDate(eventDto.getEndDate());
         event.setType(eventDto.getType());
         event.setUsers(eventDto.getUsers());
+        if(eventDto.getAuthor() != null){
+            event.setAuthor(userConverter.dtoToEntity(eventDto.getAuthor()));
+        }
+
         return event;
     }
 

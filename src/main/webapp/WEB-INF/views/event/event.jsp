@@ -26,7 +26,8 @@
 
         <div style="text-align: center">
             <form action='<c:url value="/event/search/${value}"/>' method="get">
-                <input type="text" name="value" style="height: 37px; vertical-align: middle; border-color: #18d26e; border-radius: 0.25rem">
+                <input type="text" name="value"
+                       style="height: 37px; vertical-align: middle; border-color: #18d26e; border-radius: 0.25rem">
                 <input class="btn-right btn btn-success" type="submit" value="Search">
             </form>
         </div>
@@ -42,9 +43,9 @@
                         <figure>
                             <img src="<c:url value="${eventEach.img}"/>" class="img-fluid" alt="">
                             <sec:authorize access="hasRole('ADMIN')">
-                            <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details"
-                               title="Edit"><i
-                                    class="bi bi-hammer"></i></a>
+                                <a href='<c:url value="/event/editEvent/${eventEach.id}"/>' class="link-details"
+                                   title="Edit"><i
+                                        class="bi bi-hammer"></i></a>
                             </sec:authorize>
                         </figure>
 
@@ -60,11 +61,11 @@
                                 class="bi bi-calendar-minus"></i></a>
 
 
-
-
                         <div class="portfolio-info">
-                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a></h4>
-                            <h4><fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.startDate}"/> - <fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.endDate}"/></h4>
+                            <h4><a href='<c:url value="/event/infoEvent/${eventEach.id}"/>'>${eventEach.nameOfEvent}</a>
+                            </h4>
+                            <h4><fmt:formatDate pattern="yyyy-MM-dd" value="${eventEach.startDate}"/> - <fmt:formatDate
+                                    pattern="yyyy-MM-dd" value="${eventEach.endDate}"/></h4>
                             <p>${eventEach.description}</p>
                         </div>
                     </div>

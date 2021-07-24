@@ -16,7 +16,7 @@ public class UserConverter {
         dto.setPassword(user.getPassword());
         dto.setNick(user.getNick());
         dto.setEvents(user.getEvents());
-        dto.setAuthor(user.getAuthor());
+
         return dto;
     }
 
@@ -32,7 +32,7 @@ public class UserConverter {
         user.setPassword(userDto.getPassword());
         user.setNick(userDto.getNick());
         user.setEvents(userDto.getEvents());
-        user.setAuthor(userDto.getAuthor());
+
         return user;
     }
 

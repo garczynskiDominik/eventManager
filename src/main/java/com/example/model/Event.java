@@ -31,6 +31,9 @@ public class Event {
     private String img;
     private String type;
 
+    @ManyToOne
+    private User author;
+
     @ManyToMany(mappedBy = "events")
     private Set<User> users = new HashSet<>();
 

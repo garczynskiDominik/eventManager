@@ -13,10 +13,7 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
-@NoArgsConstructor
-
+@Data
 
 public class UserDto {
 
@@ -24,14 +21,6 @@ public class UserDto {
     private String password;
     private String nick;
     private Set<Event> events = new HashSet<>();
-    private String author;
 
 
-    public UserDto(String email, String password, String nick, Set<Event> events) {
-        this.email = email;
-        this.password = password;
-        this.nick = nick;
-        this.events = events;
-        //this.author = new EventServices().getUser();
-    }
 }

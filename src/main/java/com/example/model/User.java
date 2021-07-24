@@ -19,8 +19,9 @@ public class User extends BaseEntity {
     private String password;
     private String nick;
     private boolean enable = true;
-    private String roles = "ROLE_USER";
-    private String author;
+    private String roles = "ROLE_ADMIN";
+
+
     @ManyToMany(
             cascade = {CascadeType.MERGE, CascadeType.PERSIST}
     )
@@ -32,15 +33,15 @@ public class User extends BaseEntity {
     private Set<Event> events = new HashSet<>();
 
 
-
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> role = new HashSet<>();
 
-    public void addEvent(Event event){
+    public void addEvent(Event event) {
         this.events.add(event);
         event.getUsers().add(this);
     }
-    public void removeEvent(Event event){
+
+    public void removeEvent(Event event) {
         this.events.remove(event);
         event.getUsers().remove(this);
     }

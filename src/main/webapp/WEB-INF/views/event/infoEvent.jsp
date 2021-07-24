@@ -10,6 +10,9 @@
 
         <header class="section-header">
             <h3 class="section-title">${event.nameOfEvent}</h3>
+<%--            <div class="btn-right btn btn-success" role="banner">--%>
+<%--                ${event.author.nick}dupa--%>
+<%--            </div>--%>
         </header>
 
         <div class="row" style="margin-bottom: 20px">
@@ -24,6 +27,7 @@
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${event.endDate}"/><br>
                 <strong style="color: #18d26e">Description: </strong>
                 ${event.description}
+
             </div>
 
             <div class="col">
