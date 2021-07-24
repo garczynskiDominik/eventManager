@@ -4,6 +4,7 @@ import com.example.DTO.UserDto;
 import com.example.converter.UserConverter;
 import com.example.model.User;
 import com.example.repository.UserEntityRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,11 +20,13 @@ public class UserController {
 
     private final UserEntityRepository userEntityRepository;
     private final UserConverter userConverter;
+    private final PasswordEncoder passwordEncoder;
 
 
-    public UserController(UserEntityRepository userEntityRepository, UserConverter userConverter) {
+    public UserController(UserEntityRepository userEntityRepository, UserConverter userConverter, PasswordEncoder passwordEncoder) {
         this.userEntityRepository = userEntityRepository;
         this.userConverter = userConverter;
+        this.passwordEncoder = passwordEncoder;
     }
 
     //get all
@@ -45,6 +48,7 @@ public class UserController {
         @RequestMapping(value = {"/addUser"}, method = RequestMethod.POST)
         public RedirectView addUser(@ModelAttribute UserDto userDto) {
             User user = userConverter.dtoToEntity(userDto);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             userEntityRepository.save(user);
             return new RedirectView("/login");
         }

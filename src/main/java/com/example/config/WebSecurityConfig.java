@@ -18,13 +18,21 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    DataSource dataSource;
+    private final DataSource dataSource;
+
+    public WebSecurityConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    @Bean
+    protected PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("select nick,CONCAT('{noop}',password),enable from users where nick=?")
+                .usersByUsernameQuery("select nick,password,enable from users where nick=?")
                 .authoritiesByUsernameQuery("select nick, roles from users where nick=?");
     }
 
