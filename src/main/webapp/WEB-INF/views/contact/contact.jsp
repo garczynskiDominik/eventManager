@@ -31,7 +31,8 @@
                 <div class="contact-phone">
                     <i class="bi bi-phone"></i>
                     <h3>Phone Number</h3>
-                    <p><a href="tel:+48 123 654 327">+48 123 654 327</a></p>
+                    <p><a href="#">Dominik: +48 725 248 347</a></p>
+                    <p><a href="#">Kamil: +48 782 416 324</a></p>
                 </div>
             </div>
 
@@ -39,7 +40,8 @@
                 <div class="contact-email">
                     <i class="bi bi-envelope"></i>
                     <h3>Email</h3>
-                    <p><a href="mailto:contact@eventmanager.com">contact@eventmanager.com</a></p>
+                    <p><a href="mailto:garczynski.dominik@gmail.com">Dominik: garczynski.dominik@gmail.com</a></p>
+                    <p><a href="mailto:kamilt598@gmail.com">Kamil: kamilt598@gmail.com</a></p>
                 </div>
             </div>
 
