@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="member">
-                    <img src="http://wrzucacz.studiowizjo.pl/uploads/zgarniacz1994/p1f8gfo8cr4jltnt133up451nuq4.jpg" class="img-fluid" alt="">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQElAUt12Hpwxg/profile-displayphoto-shrink_200_200/0/1517271636156?e=1632960000&v=beta&t=8eFlkPCnV01JPATJKZrg0ZTFvOCwfjHPZRTK2HLcG2c" class="img-fluid" alt="">
                     <div class="member-info">
                         <div class="member-info-content">
                             <h4>Dominik Garczyński</h4>
