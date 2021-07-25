@@ -24,7 +24,6 @@ public class EventDao {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Event> cq = cb.createQuery(Event.class);
 
-
         Root<Event> event = cq.from(Event.class);
 
         Predicate namePredicate = cb.like(cb.upper(event.get("nameOfEvent")), "%" + value.toUpperCase()+ "%");

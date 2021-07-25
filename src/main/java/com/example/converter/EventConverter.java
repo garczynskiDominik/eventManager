@@ -2,7 +2,6 @@ package com.example.converter;
 
 import com.example.DTO.EventDto;
 import com.example.model.Event;
-import com.example.services.EventServices;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,7 +15,6 @@ public class EventConverter {
     public EventConverter(UserConverter userConverter) {
         this.userConverter = userConverter;
     }
-
 
     public EventDto entityToDto(Event event) {
         EventDto dto = new EventDto();
@@ -35,7 +33,7 @@ public class EventConverter {
 
     public List<EventDto> entityToDto(List<Event> events) {
         return events.stream()
-                .map(x -> entityToDto(x))
+                .map(this::entityToDto)
                 .collect(Collectors.toList());
     }
 
@@ -56,7 +54,7 @@ public class EventConverter {
 
     public List<Event> dtoToEntity(List<EventDto> eventDtos) {
         return eventDtos.stream()
-                .map(x -> dtoToEntity(x))
+                .map(this::dtoToEntity)
                 .collect(Collectors.toList());
     }
 }

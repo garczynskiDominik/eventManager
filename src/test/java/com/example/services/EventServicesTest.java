@@ -23,12 +23,12 @@ class EventServicesTest {
     private UserEntityRepository userEntityRepository = mock(UserEntityRepository.class);
 
 
-    @Test
-    void getEvent() {
-        EventServices eventServices = new EventServices(eventRepository, new EventConverter(new UserConverter()), userEntityRepository);
-        when(eventRepository.findById(12L)).thenReturn(Optional.of(new Event(12L, "dsa", new Date(), new Date(), "dsd", "dsd", "sds", new User(), new HashSet<>())));
-        EventDto event = eventServices.getEvent(12L);
-
-        assertEquals(event.getId(), 12);
-    }
+//    @Test
+//    void getEvent() {
+//        EventServices eventServices = new EventServices(eventRepository, new EventConverter(new UserConverter()), userEntityRepository);
+//        when(eventRepository.findById(12L)).thenReturn(Optional.of(new Event(12L, "dsa", new Date(), new Date(), "dsd", "dsd", "sds", new User(), new HashSet<>())));
+//        EventDto event = eventServices.getEvent(12L);
+//
+//        assertEquals(event.getId(), 12);
+//    }
 }

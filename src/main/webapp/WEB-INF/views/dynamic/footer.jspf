@@ -3,12 +3,10 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>Event Manager</h3>
                     <p></p>
                 </div>
-
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Useful Links</h4>
                     <ul>
@@ -19,7 +17,6 @@
                         <li><i class="bi bi-chevron-right"></i> <a href='<c:url value="/contact"/>'>Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
@@ -28,16 +25,11 @@
                         Kamil: +48 782 416 324<br>
                         <strong>Email:</strong> <br>Dominik: garczynski.dominik@gmail.com<br>Kamil: kamilt598@gmail.com<br>
                     </p>
-
                     <div class="social-links">
-                        <a href="https://twitter.com/" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/dominik-garczy%C5%84ski-84139a12a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         <a href="https://www.linkedin.com/" class="linkedin"><i class="bi bi-linkedin"></i></a>
                     </div>
-
                 </div>
-
                 <div class="col-lg-3 col-md-6 footer-newsletter">
                     <h4>Our Newsletter</h4>
                     <p>Subscribe to receive information about the latest or canceled events.</p>
@@ -45,17 +37,14 @@
                         <input type="email" name="email"><input type="submit" value="Subscribe">
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="copyright">
             &copy; Copyright <strong>Dominik Garczynski & Kamil Tomczyk</strong>. All Rights Reserved
         </div>
         <div class="credits">
-
         </div>
     </div>
 </footer>

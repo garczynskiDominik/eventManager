@@ -33,10 +33,6 @@ public class User extends BaseEntity {
     )
     private Set<Event> events = new HashSet<>();
 
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> role = new HashSet<>();
-
     public void addEvent(Event event) {
         this.events.add(event);
         event.getUsers().add(this);

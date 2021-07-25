@@ -8,11 +8,8 @@
 <section id="hero">
     <div class="hero-container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
             <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
-
             <div class="carousel-inner" role="listbox">
-
                 <div class="carousel-item active" style="background-image: url(/resources/img/hero-carousel/main.jpg)">
                     <div class="carousel-container">
                         <div class="container">
@@ -22,7 +19,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/2.jpg)">
                     <div class="carousel-container">
                         <div class="container">
@@ -32,7 +28,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/3.jpg)">
                     <div class="carousel-container">
                         <div class="container">
@@ -42,7 +37,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/4.jpg)">
                     <div class="carousel-container">
                         <div class="container">
@@ -52,7 +46,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item" style="background-image: url(/resources/img/hero-carousel/5.jpg)">
                     <div class="carousel-container">
                         <div class="container">
@@ -62,7 +55,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
