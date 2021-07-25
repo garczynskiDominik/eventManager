@@ -14,7 +14,7 @@
             <h3 class="section-title">Events</h3>
         </header>
         <div style="text-align: center">
-            <sec:authorize access="hasRole('ADMIN')">
+            <sec:authorize access="isAuthenticated()">
                 <a href='<c:url value="/event/addEvent"/>'
                    class="btn-right btn btn-success" role="button">Add Event</a>
             </sec:authorize>

@@ -39,8 +39,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/event/addEvent")
+                .antMatchers("/event/editEvent/**")
                 .hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers("/event/addEvent")
+                .hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
                 .antMatchers("/", "/home", "/about", "/event", "/team", "/contact")
                 .permitAll()
                 .and()
