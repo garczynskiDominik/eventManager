@@ -27,7 +27,7 @@ public class EventConverter {
         dto.setEndDate(event.getEndDate());
         dto.setType(event.getType());
         dto.setUsers(event.getUsers());
-        //dto.setAuthor(userConverter.entityToDto(event.getAuthor()));
+        dto.setAuthor(userConverter.entityToDto(event.getAuthor()));
         return dto;
     }
 
@@ -47,6 +47,7 @@ public class EventConverter {
         event.setEndDate(eventDto.getEndDate());
         event.setType(eventDto.getType());
         event.setUsers(eventDto.getUsers());
+        event.setAuthor(userConverter.dtoToEntity(eventDto.getAuthor()));
 //        if(eventDto.getAuthor() != null){
 //            event.setAuthor(userConverter.dtoToEntity(eventDto.getAuthor()));
 //        }

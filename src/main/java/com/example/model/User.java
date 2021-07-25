@@ -19,6 +19,7 @@ public class User extends BaseEntity {
     private String password;
     private String nick;
     private boolean enable = true;
+    private String author;
     private String roles = "ROLE_ADMIN";
 
 
