@@ -13,14 +13,16 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="member">
-                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQElAUt12Hpwxg/profile-displayphoto-shrink_200_200/0/1517271636156?e=1632960000&v=beta&t=8eFlkPCnV01JPATJKZrg0ZTFvOCwfjHPZRTK2HLcG2c3" class="img-fluid" alt="">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQElAUt12Hpwxg/profile-displayphoto-shrink_800_800/0/1517271636156?e=1632960000&v=beta&t=DlnmGtlsmmt5pi7OAbudZ7PIEnfAeS44c8ezs527qMI"
+                         class="img-fluid" alt="">
                     <div class="member-info">
                         <div class="member-info-content">
                             <h4>Dominik Garczyński</h4>
                             <span>Java Developer</span>
                             <div class="social">
                                 <a href="https://github.com/garczynskiDominik"><i class="bi bi-github"></i></a>
-                                <a href="https://www.linkedin.com/in/dominik-garczy%C5%84ski-84139a12a/"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/dominik-garczy%C5%84ski-84139a12a/"><i
+                                        class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
