@@ -24,13 +24,7 @@ public class UserDto {
     private String author;
     private Set<Event> events = new HashSet<>();
 
-    /*public UserDto(String email, String password, String nick, Set<Event> events) {
-        this.email = email;
-        this.password = password;
-        this.nick = nick;
-        this.events = events;
-        //this.author = new EventServices().getUser();
-    }*/
+
 
 
 }

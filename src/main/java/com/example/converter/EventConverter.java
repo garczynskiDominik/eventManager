@@ -2,6 +2,7 @@ package com.example.converter;
 
 import com.example.DTO.EventDto;
 import com.example.model.Event;
+import com.example.services.EventServices;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,10 +13,10 @@ public class EventConverter {
 
     private final UserConverter userConverter;
 
-
     public EventConverter(UserConverter userConverter) {
         this.userConverter = userConverter;
     }
+
 
     public EventDto entityToDto(Event event) {
         EventDto dto = new EventDto();
@@ -47,10 +48,7 @@ public class EventConverter {
         event.setEndDate(eventDto.getEndDate());
         event.setType(eventDto.getType());
         event.setUsers(eventDto.getUsers());
-        event.setAuthor(userConverter.dtoToEntity(eventDto.getAuthor()));
-//        if(eventDto.getAuthor() != null){
-//            event.setAuthor(userConverter.dtoToEntity(eventDto.getAuthor()));
-//        }
+        event.setAuthor(event.getAuthor());
 
         return event;
     }

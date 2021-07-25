@@ -51,10 +51,9 @@ public class EventController {
     @RequestMapping(value = {"/event/addEvent"}, method = RequestMethod.POST)
     public RedirectView postAddEvent(@ModelAttribute EventDto eventDto) {
         Event event = eventConverter.dtoToEntity(eventDto);
-        if (event.getAuthor() == null) {
-            //sddss
+        //if (event.getAuthor() == null) {
             event.setAuthor(eventServices.getUser());
-        }
+        //}
         eventRepository.save(event);
         return new RedirectView("/event");
     }

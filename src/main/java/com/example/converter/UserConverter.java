@@ -18,7 +18,6 @@ public class UserConverter {
         dto.setNick(user.getNick());
         dto.setEvents(user.getEvents());
         dto.setAuthor(user.getAuthor());
-
         return dto;
     }
 
