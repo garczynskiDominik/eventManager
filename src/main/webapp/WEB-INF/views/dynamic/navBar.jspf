@@ -32,5 +32,9 @@
         </div>
 
     </div>
+
 </header>
+
+<%@include file="javaScript.jspf" %>
 <!-- End Header -->
+
