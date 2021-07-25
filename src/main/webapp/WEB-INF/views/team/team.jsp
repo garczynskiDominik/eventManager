@@ -4,38 +4,28 @@
 <%@include file="../dynamic/css.jspf" %>
 <%@include file="../dynamic/navBar.jspf" %>
 
-
-
-
-
-<!-- ======= Team Section ======= -->
 <section id="team">
     <div class="container">
         <div class="section-header">
             <h3>Team</h3>
             <p>Our crew is small, but very ambitious and hardworking</p>
         </div>
-
         <div class="row">
-
             <div class="col-lg-6 col-md-6">
                 <div class="member">
-                    <img src="resources/img/team1.jpg" class="img-fluid" alt="">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQElAUt12Hpwxg/profile-displayphoto-shrink_200_200/0/1517271636156?e=1632960000&v=beta&t=8eFlkPCnV01JPATJKZrg0ZTFvOCwfjHPZRTK2HLcG2c3" class="img-fluid" alt="">
                     <div class="member-info">
                         <div class="member-info-content">
                             <h4>Dominik Garczyński</h4>
-                            <span>Founder</span>
+                            <span>Java Developer</span>
                             <div class="social">
-                                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
-                                <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-                                <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
-                                <a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://github.com/garczynskiDominik"><i class="bi bi-github"></i></a>
+                                <a href="https://www.linkedin.com/in/dominik-garczy%C5%84ski-84139a12a/"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6 col-md-6">
                 <div class="member">
                     <img src="resources/img/team1.jpg" class="img-fluid" alt="">
@@ -53,9 +43,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-</section><!-- End Team Section -->
+</section>
 <%@include file="../dynamic/footer.jspf" %>

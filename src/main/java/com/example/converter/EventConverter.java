@@ -10,6 +10,12 @@ import java.util.stream.Collectors;
 @Component
 public class EventConverter {
 
+    private final UserConverter userConverter;
+
+    public EventConverter(UserConverter userConverter) {
+        this.userConverter = userConverter;
+    }
+
     public EventDto entityToDto(Event event) {
         EventDto dto = new EventDto();
         dto.setId(event.getId());
@@ -20,12 +26,14 @@ public class EventConverter {
         dto.setEndDate(event.getEndDate());
         dto.setType(event.getType());
         dto.setUsers(event.getUsers());
+        dto.setAuthor(userConverter.entityToDto(event.getAuthor()));
+
         return dto;
     }
 
     public List<EventDto> entityToDto(List<Event> events) {
         return events.stream()
-                .map(x -> entityToDto(x))
+                .map(this::entityToDto)
                 .collect(Collectors.toList());
     }
 
@@ -39,12 +47,14 @@ public class EventConverter {
         event.setEndDate(eventDto.getEndDate());
         event.setType(eventDto.getType());
         event.setUsers(eventDto.getUsers());
+        event.setAuthor(event.getAuthor());
+
         return event;
     }
 
     public List<Event> dtoToEntity(List<EventDto> eventDtos) {
         return eventDtos.stream()
-                .map(x -> dtoToEntity(x))
+                .map(this::dtoToEntity)
                 .collect(Collectors.toList());
     }
 }

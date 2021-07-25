@@ -24,12 +24,11 @@ public class EventDao {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Event> cq = cb.createQuery(Event.class);
 
-
         Root<Event> event = cq.from(Event.class);
 
-        Predicate namePredicate = cb.like(event.get("nameOfEvent"), "%" + value+ "%");
-        Predicate typePredicate = cb.like(event.get("type"), "%" + value + "%");
-        Predicate descriptionPredicate = cb.like(event.get("description"), "%" + value + "%");
+        Predicate namePredicate = cb.like(cb.upper(event.get("nameOfEvent")), "%" + value.toUpperCase()+ "%");
+        Predicate typePredicate = cb.like(cb.upper(event.get("type")), "%" + value.toUpperCase() + "%");
+        Predicate descriptionPredicate = cb.like(cb.upper(event.get("description")), "%" + value.toUpperCase() + "%");
 
         Predicate or = cb.or(namePredicate, typePredicate, descriptionPredicate);
         cq.where(or);

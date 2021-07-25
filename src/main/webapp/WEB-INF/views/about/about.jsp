@@ -8,16 +8,13 @@
 <!-- ======= About Us Section ======= -->
 <section id="about">
     <div class="container">
-
         <header class="section-header">
             <h3>About Us</h3>
             <p>We are students of the Java programming course.
-            As part of the final project, we had to create an event aggregation website.
-            <br>The website is being developed all the time.</p>
+                As part of the final project, we had to create an event aggregation website.
+                <br>The website is being developed all the time.</p>
         </header>
-
         <div class="row about-cols">
-
             <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
@@ -31,7 +28,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
@@ -45,7 +41,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="about-col">
                     <div class="img">
@@ -59,12 +54,8 @@
                     </p>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 <%@include file="../dynamic/footer.jspf" %>
 

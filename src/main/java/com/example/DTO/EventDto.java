@@ -21,4 +21,6 @@ public class EventDto {
     private String img;
     private String type;
     private Set<User> users = new HashSet<>();
+
+    private UserDto author;
 }

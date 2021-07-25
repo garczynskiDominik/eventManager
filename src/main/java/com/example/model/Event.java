@@ -1,6 +1,5 @@
 package com.example.model;
 
-
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +29,9 @@ public class Event {
     private String description;
     private String img;
     private String type;
+
+    @ManyToOne
+    private User author;
 
     @ManyToMany(mappedBy = "events")
     private Set<User> users = new HashSet<>();

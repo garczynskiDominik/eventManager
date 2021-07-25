@@ -7,22 +7,19 @@
 
 <section id="portfolio" class="section-bg">
     <div class="container">
-
         <header class="section-header">
             <h3 class="section-title">Edit event <br> ${event.nameOfEvent}</h3>
         </header>
-
-
         <form action='<c:url value="/event/editEvent/${event.id}"/>' method="post" name="send">
             <div style="margin-bottom: 20px">
                 <strong>Name of event</strong>
-                <input class="form-control" type="text" name="nameOfEvent" required pattern="\S+"
+                <input class="form-control" type="text" name="nameOfEvent" required
                        value="${event.nameOfEvent}">
+                <input class="form-control" type="number" name="author"
+                       value="${event.author.id}" hidden>
                 <strong>Type</strong>
-                <input class="form-control" type="text" name="type" required pattern="\S+" value="${event.type}">
-
+                <input class="form-control" type="text" name="type" required value="${event.type}">
             </div>
-
             <div class="row" style="margin-bottom: 20px">
                 <div class="col">
                     <strong>Start date</strong>
@@ -46,34 +43,15 @@
                 <textarea class="form-control" rows="2" name="description" minlength="20"
                           maxlength="255">${event.description}</textarea>
             </div>
-
             <div>
-                <input class="btn btn-success pull-left" type="submit" value="Save" style="width: 100%"></input>
+                <input class="btn btn-success pull-left" type="submit" value="Save" style="width: 100%">
             </div>
-
         </form>
         <form name="send" method="POST" action='<c:url value="/event/deleteEvent/${event.id}"/>'>
             <input type="submit" class="btn btn-danger pull-left" style="width: 100%"
                    name="delete" value="Delete"/>
-
         </form>
     </div>
-
 </section>
-
-<script>
-    var start = document.getElementById('start');
-    var end = document.getElementById('end');
-
-    start.addEventListener('change', function () {
-        if (start.value)
-            end.min = start.value;
-    }, false);
-    end.addEventListener('change', function () {
-        if (end.value)
-            start.max = end.value;
-    }, false);
-</script>
-
 <!-- End Portfolio Section -->
 <%@include file="../dynamic/footer.jspf" %>
