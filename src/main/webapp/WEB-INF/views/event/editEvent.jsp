@@ -18,7 +18,6 @@
                 <strong>Name of event</strong>
                 <input class="form-control" type="text" name="nameOfEvent" required
                        value="${event.nameOfEvent}">
-                <strong>Author</strong>
                 <input class="form-control" type="number" name="author"
                        value="${event.author.id}" hidden>
                 <strong>Type</strong>
