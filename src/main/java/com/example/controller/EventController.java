@@ -64,7 +64,6 @@ public class EventController {
         event.setId(id);
         eventServices.editEvent(event, id);
         return new RedirectView("/event");
-
     }
 
     //edit get
@@ -111,5 +110,4 @@ public class EventController {
         eventServices.userDeleteFromEvent(id);
         return new RedirectView("/event");
     }
-
 }

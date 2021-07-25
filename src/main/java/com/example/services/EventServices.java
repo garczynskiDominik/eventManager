@@ -23,16 +23,10 @@ public class EventServices {
         this.userEntityRepository = userEntityRepository;
     }
 
-
-
     public EventDto getEvent(Long id) {
         Event event = eventRepository.findById(id).orElse(null);
         return eventConverter.entityToDto(event);
     }
-
-    /*public void editEvent(Event event) {
-        eventRepository.save(event);
-    }*/
 
     public void editEvent(Event event, Long id) {
         Event editEvent1 = new Event(
@@ -77,7 +71,5 @@ public class EventServices {
         }
         return userEntityRepository.findByNick(nick);
     }
-
-
 }
 

@@ -29,6 +29,7 @@ public class EventConverter {
         dto.setType(event.getType());
         dto.setUsers(event.getUsers());
         dto.setAuthor(userConverter.entityToDto(event.getAuthor()));
+
         return dto;
     }
 
