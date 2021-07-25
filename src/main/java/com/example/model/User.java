@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     private String nick;
     private boolean enable = true;
     private String author;
-    private String roles = "ROLE_ADMIN";
+    private String roles = "ROLE_USER";
 
 
     @ManyToMany(

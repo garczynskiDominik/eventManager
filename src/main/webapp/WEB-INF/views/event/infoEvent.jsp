@@ -54,43 +54,6 @@
         </div>
     </div>
 
-    <%--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">--%>
-    <%--    <hr>--%>
-    <%--    <div class="container">--%>
-    <%--        <div class="row">--%>
-
-    <%--            <div class="media">--%>
-    <%--                <div class="media-left">--%>
-    <%--                    <img src="http://fakeimg.pl/50x50" class="media-object" style="width:40px">--%>
-    <%--                </div>--%>
-    <%--                <div class="media-body">--%>
-    <%--                    <h4 class="media-heading title">Fahmi Arif</h4>--%>
-    <%--                    <p class="komen">--%>
-    <%--                        kalo bisa ya ndak usah gan biar cepet<br>--%>
-    <%--                        <a href="#">reply</a>--%>
-    <%--                    </p>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-
-    <%--            <div class="geser">--%>
-    <%--                <div class="media">--%>
-    <%--                    <div class="media-left">--%>
-    <%--                        <img src="http://fakeimg.pl/50x50" class="media-object" style="width:40px">--%>
-    <%--                    </div>--%>
-    <%--                    <div class="media-body">--%>
-    <%--                        <h4 class="media-heading title">Fahmi Arif</h4>--%>
-    <%--                        <p class="komen">--%>
-    <%--                            kalo bisa ya ndak usah gan biar cepet<br>--%>
-    <%--                            <a href="#">reply</a>--%>
-    <%--                        </p>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-
-
-    <%--        </div>--%>
-    <%--    </div>--%>
-
 </section>
 
 <script>
