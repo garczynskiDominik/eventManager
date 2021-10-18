@@ -3,9 +3,7 @@ package com.example.controller;
 import com.example.DTO.UserDto;
 import com.example.services.UserServices;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 
@@ -18,16 +16,15 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    @RequestMapping(value = {"/addUser"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/addUser"})
     public String getAddUser() {
         return "login/register";
     }
 
-    @RequestMapping(value = {"/addUser"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/addUser"})
     public RedirectView postAddUser(@ModelAttribute UserDto userDto) {
         userServices.addUserPost(userDto);
         return new RedirectView("/login");
     }
-
 }
 

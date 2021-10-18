@@ -23,61 +23,61 @@ public class EventController {
         this.eventRepository = eventRepository;
     }
 
-    @RequestMapping(value = {"/event"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/event"})
     public String getEvents(Model model) {
         eventServices.getEvents(model);
         return "event/event";
     }
 
-    @RequestMapping(value = {"/event/addEvent"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/event/addEvent"})
     public String getAddEvent() {
         return "event/addEvent";
     }
 
-    @RequestMapping(value = {"/event/addEvent"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/event/addEvent"})
     public RedirectView postAddEvent(@ModelAttribute EventDto eventDto) {
         eventServices.addEventPost(eventDto);
         return new RedirectView("/event");
     }
 
-    @RequestMapping(value = {"/event/editEvent/{id}"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/event/editEvent/{id}"})
     public RedirectView postEditEvent(@ModelAttribute Event event, @PathVariable("id") Long id) {
         eventServices.saveEditEvent(event, id);
         return new RedirectView("/event");
     }
 
-    @RequestMapping(value = {"/event/editEvent/{id}"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/event/editEvent/{id}"})
     public String getEditEvent(Model model, @PathVariable("id") Long id) {
         model.addAttribute("event", eventServices.getEvent(id));
         return "event/editEvent";
     }
 
     @Transactional
-    @RequestMapping(value = {"/event/deleteEvent/{id}"}, method = {RequestMethod.POST, RequestMethod.DELETE})
+    @PostMapping(value = {"/event/deleteEvent/{id}"})
     public RedirectView deleteEvent(@PathVariable("id") Long id) {
         eventRepository.deleteById(id);
         return new RedirectView("/event");
     }
 
-    @RequestMapping(value = {"/event/infoEvent/{id}"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/event/infoEvent/{id}"})
     public String getInfoAboutEvent(Model model, @PathVariable("id") Long id) {
         model.addAttribute("event", eventServices.getEvent(id));
         return "event/infoEvent";
     }
 
-    @RequestMapping(value = {"/event/search"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/event/search"})
     public String getFindEvent(Model model, @RequestParam("value") String value) {
         eventServices.findEvent(model, value);
         return "event/event";
     }
 
-    @RequestMapping(value = {"/event/saveOnEvent/{id}"}, method = {RequestMethod.GET})
+    @GetMapping(value = {"/event/saveOnEvent/{id}"})
     public RedirectView saveUserOnEvent(@PathVariable("id") Long id) {
         eventServices.userSaveToEvent(id);
         return new RedirectView("/event");
     }
 
-    @RequestMapping(value = {"/event/deleteFromEvent/{id}"}, method = {RequestMethod.GET})
+    @GetMapping(value = {"/event/deleteFromEvent/{id}"})
     public RedirectView deleteUserFromEvent(@PathVariable("id") Long id) {
         eventServices.userDeleteFromEvent(id);
         return new RedirectView("/event");
