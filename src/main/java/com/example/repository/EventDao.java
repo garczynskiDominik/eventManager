@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.model.Event;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -12,13 +13,10 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
+@AllArgsConstructor
 public class EventDao {
 
     EntityManager em;
-
-    public EventDao(EntityManager em) {
-        this.em = em;
-    }
 
     public List<Event> findEventsByNameAndType(String value) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
