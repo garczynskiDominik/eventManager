@@ -4,6 +4,7 @@ import com.example.DTO.EventDto;
 import com.example.model.Event;
 import com.example.repository.EventRepository;
 import com.example.services.EventServices;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,16 +13,11 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.transaction.Transactional;
 
 @Controller
+@RequiredArgsConstructor
 public class EventController {
 
     private final EventServices eventServices;
     private final EventRepository eventRepository;
-
-
-    public EventController(EventServices eventServices, EventRepository eventRepository) {
-        this.eventServices = eventServices;
-        this.eventRepository = eventRepository;
-    }
 
     @GetMapping(value = {"/event"})
     public String getEvents(Model model) {
