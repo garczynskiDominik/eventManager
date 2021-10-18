@@ -7,6 +7,7 @@ import com.example.model.User;
 import com.example.repository.EventDao;
 import com.example.repository.EventRepository;
 import com.example.repository.UserEntityRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EventServices {
 
     private final EventRepository eventRepository;
@@ -22,12 +24,6 @@ public class EventServices {
     private final UserEntityRepository userEntityRepository;
     private final EventDao eventDao;
 
-    public EventServices(EventRepository eventRepository, EventConverter eventConverter, UserEntityRepository userEntityRepository, EventDao eventDao) {
-        this.eventRepository = eventRepository;
-        this.eventConverter = eventConverter;
-        this.userEntityRepository = userEntityRepository;
-        this.eventDao = eventDao;
-    }
 
     public EventDto getEvent(Long id) {
         Event event = eventRepository.findById(id).orElse(null);
