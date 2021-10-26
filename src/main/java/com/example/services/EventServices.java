@@ -95,5 +95,17 @@ public class EventServices {
         List<EventDto> listDtos = eventConverter.entityToDto(list);
         model.addAttribute("event", listDtos);
     }
+
+    public void editEventGet(Model model, Long id) {
+        model.addAttribute("event", getEvent(id));
+    }
+
+    public void delete(Long id) {
+        eventRepository.deleteById(id);
+    }
+
+    public void getInfoEvent(Model model, Long id) {
+        model.addAttribute("event", getEvent(id));
+    }
 }
 

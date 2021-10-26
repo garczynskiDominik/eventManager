@@ -2,7 +2,6 @@ package com.example.controller;
 
 import com.example.DTO.EventDto;
 import com.example.model.Event;
-import com.example.repository.EventRepository;
 import com.example.services.EventServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import javax.transaction.Transactional;
 public class EventController {
 
     private final EventServices eventServices;
-    private final EventRepository eventRepository;
 
     @GetMapping(value = {"/event"})
     public String getEvents(Model model) {
@@ -44,20 +42,20 @@ public class EventController {
 
     @GetMapping(value = {"/event/editEvent/{id}"})
     public String getEditEvent(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("event", eventServices.getEvent(id));
+        eventServices.editEventGet(model, id);
         return "event/editEvent";
     }
 
     @Transactional
     @PostMapping(value = {"/event/deleteEvent/{id}"})
     public RedirectView deleteEvent(@PathVariable("id") Long id) {
-        eventRepository.deleteById(id);
+        eventServices.delete(id);
         return new RedirectView("/event");
     }
 
     @GetMapping(value = {"/event/infoEvent/{id}"})
     public String getInfoAboutEvent(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("event", eventServices.getEvent(id));
+        eventServices.getInfoEvent(model, id);
         return "event/infoEvent";
     }
 
